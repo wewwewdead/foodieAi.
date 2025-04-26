@@ -1,10 +1,10 @@
-import { GoogleGenAI, Type } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 import multer from "multer";
 import express from "express";
 import 'dotenv/config';
-import { config } from "dotenv";
 
-// Initialize Google Generative AI with API Key
+
+// initialize google ai with api Key
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 const router = express.Router();
