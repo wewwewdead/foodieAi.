@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route} from 'react-router-dom'
+import { Routes, Route, BrowserRouter} from 'react-router-dom'
 import './App.css'
 import './landingPage.css'
 import FeedPage from '../component/home'
@@ -9,10 +9,13 @@ function App() {
 
 
   return (
-      <Routes>
+    <BrowserRouter>
+    <Routes>
         <Route path='/' element={<LandingPage/>}/>
         <Route path='homepage' element={<FeedPage/>}/>
       </Routes>
+    </BrowserRouter>
+      
   )
 }
 export default App
