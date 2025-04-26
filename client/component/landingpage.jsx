@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Footer from "./footer";
-import foodielogo from '../assets/foodie.png'
+import foodielogo from '../src/assets/foodie.png'
 
 const LandingPage = () => {
     useEffect(() => {
