@@ -9,12 +9,10 @@ function App() {
 
 
   return (
-    <BrowserRouter>
     <Routes>
         <Route path='/' element={<LandingPage/>}/>
         <Route path='homepage' element={<FeedPage/>}/>
-      </Routes>
-    </BrowserRouter>
+    </Routes>
       
   )
 }
