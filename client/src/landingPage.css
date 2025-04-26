@@ -1,0 +1,103 @@
+
+.container{
+    overflow-y: auto;
+    min-height: 100vh;
+    width:fit-content;
+    padding: 1rem;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('./assets/bg1.jpg');
+    background-size: cover;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.85;
+}
+.landing-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.foodie{
+    font-size: 1.5rem;
+    font-weight: 750;
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+}
+.no-food{
+    margin-top: 1rem;
+    color: rgba(255, 11, 11, 0.941);
+}
+.foodie-logo{
+    margin: 0 0.5rem 0 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 25px 25px 25px 10px;
+}
+.slogan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.slogan span{
+    font-style: italic;
+    color: rgb(19, 19, 19);
+}
+.slogan h2{
+    width: 50%;
+    text-align: center;
+    font-weight: 500;
+}
+.shiny-button{
+    position: relative;
+    overflow: hidden;
+    font-size: 1.5rem;
+    border-radius: 40px;
+    padding: 1.5rem;
+    background-color: rgb(255, 142, 12);
+    box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.3);
+}
+.shiny-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(10deg, transparent, rgba(255, 255, 255, 0.105));
+    transform: skewX(-15deg);
+    animation: shine 5s infinite linear;
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -150%;
+    }
+    100% {
+      left: 150%;
+    }
+  }
+.sub-header{
+    margin: 4rem 0 4rem 0;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sub-header h1{
+    padding: 0;
+    margin: 0;
+}
+.sub-header h2{
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+}
