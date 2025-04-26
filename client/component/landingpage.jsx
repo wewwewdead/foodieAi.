@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Footer from "./footer";
+import foodielogo from '../assets/foodie.png'
 
 const LandingPage = () => {
     useEffect(() => {
@@ -24,7 +25,7 @@ const LandingPage = () => {
                 transition={{duration: 0.5}}
                 viewport={{once: true}}
                 className="foodie-logo" 
-                src="../src/assets/foodie.png" 
+                src={foodielogo}
                 alt="" />
                 <motion.p 
                 initial={{opacity: 0, x: 50}}
