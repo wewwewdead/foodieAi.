@@ -191,7 +191,7 @@ const FeedPage = ()=> {
                 {switchButton ? (
                     <button disabled={analyzing}  type="button" onClick={newPhoto}>{analyzing ? 'Analyzing...' : 'Analyze new food'}</button>
                 ) : (
-                    <button disabled={analyzing} className="analyze-bttn" type="submit">{analyzing ? 'Analyzing...' : 'Show me the benefits!'}</button> 
+                    <button disabled={analyzing} className="analyze-bttn" type="submit">{analyzing ? 'Analyzing...' : 'Analyze my food'}</button> 
                 )}
                 
                 
