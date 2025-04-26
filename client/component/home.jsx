@@ -67,6 +67,7 @@ const FeedPage = ()=> {
         
         if(fileRef.current){
             setSwitchButton(!switchButton);
+            setNoFood('')
             setImagePreview('')
             setAnalysis('')
             setFile(null)
