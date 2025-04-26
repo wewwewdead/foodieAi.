@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors({
-    origin:['http://localhost:5173'],
+    origin:['https://foodieai-1-g7lh.onrender.com','http://localhost:5173'],
     methods: "GET,POST,PUT,DELETE",
     credentials: true
 }));
