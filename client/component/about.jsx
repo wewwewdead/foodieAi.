@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import '../src/about.css'
-import { motion } from "framer-motion";
 
 const About =() => {
     useEffect(() =>{
@@ -14,22 +13,14 @@ const About =() => {
         <div className="parent-container">
             <div className="app-container">
                 <div className="app-body-container">      
-                    <motion.div 
-                    initial={{opacity:0, scale: 0.9}}
-                    whileInView={{opacity:1, scale:1}}
-                    transition={{duration:0.5}}
-                    viewport={{once: true}}
+                    <div 
                     className="title-container"
                     >
                         <h1>Foodie Ai.</h1>
                         <p>A food analyzer that use multi modal Ai, powerful and efficient.</p>
-                    </motion.div>
+                    </div>
                     <div className="content-container">
-                        <motion.div 
-                        initial={{opacity:0, x:-100}}
-                        whileInView={{opacity:1, x:0}}
-                        transition={{duration: 0.5}}
-                        viewport={{once: true}}
+                        <div 
                         className="cards"
                         >
                             <h2 >How It Works (Simple)</h2>
@@ -39,13 +30,9 @@ const About =() => {
                             <br />
                             <p className="text">I use Google's gemini-2.5-flash-preview-04-17.</p>
                             <p className="text">It is optimized for adaptive thinking and reasoning. It is multi modal that can generate text from image. </p>
-                        </motion.div>
-                        <motion.div 
+                        </div>
+                        <div 
                         className="cards"
-                        initial={{opacity:0, y:100}}
-                        whileInView={{opacity:1, y:0}}
-                        transition={{duration: 0.5}}
-                        viewport={{once: true}}
                         >
                             <h2>Why I built this</h2>
                             <p className="text">I believe that healthy eating should be accessible to everyone. 
@@ -54,12 +41,8 @@ const About =() => {
                             <p className="text">
                             By helping users understand the nutritional value of their meals and make more informed food choices."
                             </p>
-                        </motion.div>
-                        <motion.div 
-                        initial={{opacity:0, x:100}}
-                        whileInView={{opacity:1, x:0}}
-                        transition={{duration: 0.5}}
-                        viewport={{once: true}}
+                        </div>
+                        <div 
                         className="cards"
                         >
                             <h2>How I built <span>foodieAi.</span></h2>
@@ -68,7 +51,7 @@ const About =() => {
                                 on programming to make food analysis fast and accessible.
                             </p>
                             <p className="highlights">Every line of code was written with one goal: to help people make better food choices effortlessly."</p>
-                        </motion.div>
+                        </div>
                     </div>
                 <Footer/>
                 </div>        

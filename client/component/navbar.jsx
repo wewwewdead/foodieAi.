@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef, act } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import foodielogo from '../src/assets/foodie.png'
-import { path } from "framer-motion/client";
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Navbar = () =>{
     const navigate = useNavigate();
@@ -33,13 +32,13 @@ const Navbar = () =>{
             <p onClick={clickLogo} className="foodie">Foodie AI.</p>
             </div>
             <div onClick={handleMenuClick} className="menu-bttn">
-                {!showSidebar ? <motion.svg
+                {!showSidebar ? <svg
                 xmlns="http://www.w3.org/2000/svg" 
                 height="24px" viewBox="0 -960 960 960" 
                 width="24px" 
                 fill="#000000"
                 ><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-                </motion.svg> 
+                </svg> 
 
                 : <svg
                 xmlns="http://www.w3.org/2000/svg" 
@@ -63,6 +62,7 @@ const Navbar = () =>{
         initial={{opacity: 0, x: 100}}
         whileInView={{opacity:1, x:0}}
         transition={{duration: 0.1}}
+        viewport={{once: true}}
         className={!showSidebar ? "hide" : "sidebar"}
         >
         <Link className={`${activePath === '/homepage' ? 'active-link' : 'links'}`} to='/homepage'>Home</Link>

@@ -14,22 +14,14 @@ const AboutFood = () =>{
         <div className="parent-container">
             <div className="app-container">
                 <div className="app-body-container">      
-                    <motion.div 
-                    initial={{opacity:0, scale: 0.9}}
-                    whileInView={{opacity:1, scale:1}}
-                    transition={{duration:0.5}}
-                    viewport={{once: true}}
+                    <div 
                     className="title-container"
                     >
                         <h1>Education mode</h1>
                         <p>Fun facts about foods!</p>
-                    </motion.div>
+                    </div>
                     <div className="content-container">
-                        <motion.div 
-                        initial={{opacity:0, x:-100}}
-                        whileInView={{opacity:1, x:0}}
-                        transition={{duration: 0.5}}
-                        viewport={{once: true}}
+                        <div
                         className="cards"
                         >
                             <h2 >Why fiber is important</h2>
@@ -40,13 +32,9 @@ const AboutFood = () =>{
                             <span>Heart Health: </span>Fiber, particularly soluble, lowers LDL ("bad") cholesterol by binding bile acids, forcing the body to use cholesterol to produce more bile.
                              It also reduces inflammation and blood pressure, lowering heart disease risk.
                             </p>
-                        </motion.div>
-                        <motion.div 
+                        </div>
+                        <div 
                         className="cards"
-                        initial={{opacity:0, y:100}}
-                        whileInView={{opacity:1, y:0}}
-                        transition={{duration: 0.5}}
-                        viewport={{once: true}}
                         >
                             <h2>Carbs</h2>
                             <p className="text">
@@ -60,19 +48,15 @@ const AboutFood = () =>{
                             They cause rapid blood sugar spikes, contribute to weight gain, 
                             and increase risks of diabetes and heart disease.
                             </p>
-                        </motion.div>
-                        <motion.div 
-                        initial={{opacity:0, x:100}}
-                        whileInView={{opacity:1, x:0}}
-                        transition={{duration: 0.5}}
-                        viewport={{once: true}}
+                        </div>
+                        <div 
                         className="cards"
                         >
                             <h2>How sugar affects body</h2>
                             <p className="text">Sugar causes rapid blood sugar spikes, 
                                 triggering insulin release and temporary energy boosts, but excess intake leads to weight gain, insulin resistance, and increased risks of type 2 diabetes, heart disease, and fatty liver. It also harms dental health, disrupts gut microbiota, 
                                 accelerates skin aging, and may impair cognitive function and mental health over time.</p>
-                        </motion.div>
+                        </div>
                     </div>
                 <Footer/>
                 </div>        
