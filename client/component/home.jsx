@@ -171,7 +171,7 @@ const FeedPage = ()=> {
         <Navbar/>
         <div className="parent-container">
             <div className="app-container">
-                <div className="app-body-container">
+                <div className="app-body-container night-mode">
                 <form
                  onSubmit={handleSubmit}
                  className="form-container">

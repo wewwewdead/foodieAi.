@@ -24,6 +24,7 @@
 .foodie{
     font-size: 1.5rem;
     font-weight: 750;
+    cursor: pointer;
 }
 .logo-container{
     display: flex;
@@ -38,6 +39,7 @@
     width: 60px;
     height: 60px;
     border-radius: 25px 25px 25px 10px;
+    cursor: pointer;
 }
 .slogan {
     display: flex;

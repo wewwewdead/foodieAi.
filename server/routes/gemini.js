@@ -33,17 +33,17 @@ router.post("/analyze", upload, async (req, res) => {
             benefits: {
               type: 'array',
               items: { type: 'string' },
-              description: '2-3 Health benefits of the food which body part will benefit e.g., [Make your skin glowing and can cure diseases if available] in one sentence'
+              description: '2-3 Health benefits of the food which body part will benefit e.g., [Make your skin glowing and can cure diseases if available] in one sentence and also add information about calories, carbs and sugar e.g .,[calories: 250, carbs: 30, sugar:10/100]'
             },
             drawbacks: {
               type: 'array',
               items: { type: 'string' },
-              description: '2-3 Possible negative effects if over-consumed in one sentence'
+              description: '2-3 Possible negative effects if over-consumed in one sentence and suggest similar foods that are more healthier'
             },
             nutrients: {
               type: 'array',
               items: { type: 'string' },
-              description: '2-3 Key nutrients and their general benefits in one sentence'
+              description: '2-3 Key nutrients and their general benefits in one sentence and give a health score e.g., [1-100] based on nutrients'
             }
           },
           required: ['fallback', 'food', 'benefits', 'drawbacks', 'nutrients']
