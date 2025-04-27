@@ -6,6 +6,9 @@ import '../src/about.css'
 import { motion } from "framer-motion";
 
 const About =() => {
+    useEffect(() =>{
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+    }, [])
     return(
         <>
         <Navbar/>
