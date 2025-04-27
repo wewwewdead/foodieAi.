@@ -18,9 +18,9 @@
   background-color: #ffffff5c;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  width: 40%;
+  width: 50%;
   height: 100vh;
-  left: 60%;
+  left: 50%;
   top: 93px;
 }
 .navbar{
