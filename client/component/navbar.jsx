@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef, act } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import foodielogo from '../src/assets/foodie.png'
 import { path } from "framer-motion/client";
@@ -56,8 +56,10 @@ const Navbar = () =>{
             
             </div>
             <div className={"navlinks"}>
+                <Link className ={`${activePath === '/homepage' ? 'active-link' : 'links'}`} to='/homepage'>Home</Link>
                 <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
                 <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
+                <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
             </div>
               
         </div>
@@ -67,8 +69,10 @@ const Navbar = () =>{
         transition={{duration: 0.1}}
         className={!showSidebar ? "hide" : "sidebar"}
         >
+        <Link className={`${activePath === '/homepage' ? 'active-link' : 'links'}`} to='/homepage'>Home</Link>
         <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
         <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
+        <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
         </motion.div>
         </>
         

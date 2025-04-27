@@ -82,7 +82,6 @@ form{
 }
 .app-body-container{
   display: flex;
-  overflow: auto;
   flex-direction: column;
   background: linear-gradient(to right, #fbefff, #eaf6ff);
   background-size: cover;

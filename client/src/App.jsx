@@ -6,6 +6,7 @@ import FeedPage from '../component/home'
 import LandingPage from '../component/landingpage'
 import About from '../component/about'
 import MyStory from '../component/mystory'
+import AboutFood from '../component/education'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='homepage' element={<FeedPage/>}/>
         <Route path='about' element={<About/>}/>
         <Route path='mystory' element={<MyStory/>}/>
+        <Route path='learnabout' element={<AboutFood/>}/>
     </Routes>
       
   )
