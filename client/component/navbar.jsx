@@ -34,10 +34,6 @@ const Navbar = () =>{
             </div>
             <div onClick={handleMenuClick} className="menu-bttn">
                 {!showSidebar ? <motion.svg
-                initial={{opacity: 0, scale: 0.8}}
-                animate={{opacity: 1, scale: 1}}
-                transition={{duration: 0.2}}
-                whiletap={{ scale: 0.9, transition: { type: 'spring', stiffness: 300, damping: 20 } }} 
                 xmlns="http://www.w3.org/2000/svg" 
                 height="24px" viewBox="0 -960 960 960" 
                 width="24px" 
