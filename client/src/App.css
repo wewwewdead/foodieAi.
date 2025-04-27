@@ -8,21 +8,6 @@
 .hide{
   display: none;
 }
-.sidebar{
-  z-index: 101;
-  gap: 1rem;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 0 1rem 0;
-  background-color: #ffffff5c;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  width: 50%;
-  height: 100vh;
-  left: 50%;
-  top: 93px;
-}
 .navbar{
   z-index: 100;
   position: fixed;
@@ -214,9 +199,30 @@ form{
     font-weight: 660;
     font-size: 0.9rem;
     text-decoration: none;
-    color: rgb(150 153 166);
+    color: rgb(1, 1, 0);
+  }
+  .active-link{
+    font-weight: 660;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: rgb(172, 195, 0);
   }
   .navlinks{
     display: none;
+  }
+  .sidebar{
+    z-index: 101;
+    gap: 1rem;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0 1rem 0;
+    background-color: #ffffff5c;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 50%;
+    height: 100vh;
+    left: 50%;
+    top: 93px;
   }
 }
