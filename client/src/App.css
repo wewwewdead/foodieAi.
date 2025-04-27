@@ -30,6 +30,15 @@
   text-decoration: none;
   color: rgb(150 153 166);
 }
+.active-link{
+  font-weight: 660;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: rgb(184 202 56);
+}
+.active-link:hover{
+  color: rgb(184 202 56);
+}
 .links:hover{
   color: rgb(184 202 56);
 }

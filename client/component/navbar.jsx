@@ -5,6 +5,7 @@ import { path } from "framer-motion/client";
 
 const Navbar = () =>{
     const navigate = useNavigate();
+    const [activePath, setActivePath] = useState('');
 
     const clickLogo = (e) => {
         e.stopPropagation();
@@ -13,6 +14,11 @@ const Navbar = () =>{
         }
         return navigate('/homepage');
     }
+
+    useEffect(() =>{
+        setActivePath(location.pathname)
+    }, [location.pathname])
+
     return(
         <div className="navbar">
             <div className="logo-container">
@@ -20,8 +26,8 @@ const Navbar = () =>{
             <p onClick={clickLogo} className="foodie">Foodie AI.</p>
             </div>
             <div className="navlinks">
-                <Link className="links" to='/mystory'>My story</Link>
-                <Link className="links" to='/about'>About</Link>
+                <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
+                <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
             </div>
               
         </div>
