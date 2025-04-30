@@ -18,7 +18,6 @@ const Navbar = () =>{
         } else {
             const {data: {session}} = await supabase.auth.getSession();
             setSession(session);
-            setLoggedIn(false)
         }
     }
 
@@ -51,7 +50,7 @@ const Navbar = () =>{
 
     useEffect(() =>{
         fetchUser()
-    }, [])
+    }, [session])
     return(
         <>
         <div className="navbar">
