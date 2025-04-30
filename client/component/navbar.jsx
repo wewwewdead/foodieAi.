@@ -34,17 +34,10 @@ const Navbar = () =>{
         e.stopPropagation();
         e.preventDefault()
         if(!session){
-            navigate('/login');
+            return navigate('/login');
         }
-        return;
-    }
-    const handleLogOut = async(e) => {
-        e.stopPropagation()
-        e.preventDefault()
-        if(session){
-            await supabase.auth.signOut();
-            navigate('/login')
-        } 
+        await supabase.auth.signOut();
+        navigate('/homepage')
     }
 
     useEffect(() =>{
@@ -63,9 +56,8 @@ const Navbar = () =>{
             <p onClick={clickLogo} className="foodie">Foodie AI.</p>
             </div>
 
-            {!session ? (
-                    <button onClick={handleLogin} className='sign-up-bttn-mobile'>Join foodieAi.</button>
-                ) : (<button onClick={handleLogOut} className='sign-up-bttn-mobile'>Log out</button>)}
+                <button onClick={handleLogin} className='sign-up-bttn-mobile'>{`${session ? 'Log out' : 'Join foodieAi'}`}</button>
+
             <div onClick={handleMenuClick} className="menu-bttn">
 
                 {!showSidebar ? <svg
