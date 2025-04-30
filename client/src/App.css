@@ -322,6 +322,7 @@ form{
     border-radius: 20px;
   }
   .sign-up-bttn-mobile{
+    display: block;
     background-color: rgb(184 202 56);
     color: #fcfeff;
     padding: .6rem;
