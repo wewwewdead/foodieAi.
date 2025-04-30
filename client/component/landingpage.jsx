@@ -11,7 +11,7 @@ const LandingPage = () => {
     const navigate = useNavigate();
     const handleClick = (e) => {
         e.stopPropagation();
-        navigate('homepage')
+        navigate('/homepage')
     }
     return(
         <div className="container">
@@ -73,11 +73,11 @@ const LandingPage = () => {
                       left: '-50%',
                       width: '150%',
                       height: '100%',
-                      background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent)',
+                      background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.54), transparent)',
                       transform: 'skewX(-25deg)',
                     }}
                     animate={{ left: '150%' }}
-                    transition={{ type: 'tween', duration: 2, repeat: Infinity, ease: 'linear' }}
+                    transition={{ type: 'tween', duration: 5, repeat: Infinity, ease: 'linear' }}
                     />
                         Try for FREE
                     </motion.button>
@@ -99,4 +99,4 @@ const LandingPage = () => {
     )
 }
 
-export default LandingPage
+export default LandingPage;

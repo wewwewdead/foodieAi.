@@ -121,7 +121,7 @@ const FeedPage = ()=> {
       
       useEffect(()=>{
         if(contentRef.current && showContent){
-            contentRef.current.scrollIntoView({block: 'start', behavior: 'smooth'})
+            contentRef.current.scrollIntoView({behavior: 'smooth'})
         }
       }, [showContent, analysis])
 
@@ -265,9 +265,10 @@ const FeedPage = ()=> {
                         </>             
                     )
                 )}
-                <Footer/>
-                </div>        
+                
+                </div>    
                 </div>
+                <Footer/>   
             </div>
         </div>
         </>

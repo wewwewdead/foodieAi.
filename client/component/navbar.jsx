@@ -2,11 +2,21 @@ import React, { useState, useEffect, useCallback, useRef, act } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import foodielogo from '../src/assets/foodie.png'
 import { motion } from "framer-motion";
+import supabase from "../client/supabase";
+import { button, sup } from "framer-motion/client";
 
 const Navbar = () =>{
     const navigate = useNavigate();
     const [activePath, setActivePath] = useState('');
     const [showSidebar, setShowSidebar] = useState(false)
+    const [session, setSession] = useState(null);
+
+    const fetchUser = async() =>{
+        const {data: {session}} = await supabase.auth.getSession();
+        if(session){
+            setSession(session);
+        }
+    }
 
     const clickLogo = (e) => {
         e.stopPropagation();
@@ -17,13 +27,34 @@ const Navbar = () =>{
     }
     const handleMenuClick = (e) => {
         e.stopPropagation();
+        e.preventDefault()
         setShowSidebar(!showSidebar)
+    }
+    const handleLogin = async(e) => {
+        e.stopPropagation();
+        e.preventDefault()
+        if(!session){
+            navigate('/login');
+        }
+        return;
+    }
+    const handleLogOut = async(e) => {
+        e.stopPropagation()
+        e.preventDefault()
+        if(session){
+            await supabase.auth.signOut();
+            navigate('/login')
+        } 
     }
 
     useEffect(() =>{
         setActivePath(location.pathname)
+        
     }, [location.pathname])
 
+    useEffect(() =>{
+        fetchUser()
+    }, [])
     return(
         <>
         <div className="navbar">
@@ -55,6 +86,10 @@ const Navbar = () =>{
                 <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
                 <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
                 <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
+                {!session ? (
+                    <button onClick={handleLogin} className='sign-up-bttn'>Join foodAi.</button>
+                ) : (<button onClick={handleLogOut}>Log out</button>)}
+                
             </div>
               
         </div>
@@ -68,6 +103,7 @@ const Navbar = () =>{
         <Link className={`${activePath === '/homepage' ? 'active-link' : 'links'}`} to='/homepage'>Home</Link>
         <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
         <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
+
         <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
         </motion.div>
         </>
