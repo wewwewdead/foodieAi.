@@ -14,8 +14,8 @@ function App() {
 
   return (
     <Routes>
-        <Route path='/' element={<FeedPage/>}/>
         <Route path='/landingpage' element={<LandingPage/>}/>
+        <Route path='/' element={<FeedPage/>}/>
         <Route path='homepage' element={<FeedPage/>}/>
         <Route path='about' element={<About/>}/>
         <Route path='mystory' element={<MyStory/>}/>

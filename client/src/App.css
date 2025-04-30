@@ -64,12 +64,9 @@
   color: #fcfeff; 
 }
 .sign-up-bttn-mobile{
-  background-color: rgb(184 202 56);
-  color: #fcfeff;
-  padding: .6rem;
-  border-radius: 10px;
-  font-size: 0.8rem;
+  display: none;
 }
+
 .logo-container{
   display: flex;
 }
@@ -323,5 +320,12 @@ form{
     padding: 0 0.2rem 0rem 0.2rem;
     margin: 0;
     border-radius: 20px;
+  }
+  .sign-up-bttn-mobile{
+    background-color: rgb(184 202 56);
+    color: #fcfeff;
+    padding: .6rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
   }
 }
