@@ -13,11 +13,11 @@ const Navbar = () =>{
     const [loggedIn, setLoggedIn] = useState(false)
 
     const fetchUser = async() =>{
-        const {data: {session}} = await supabase.auth.getSession();
         if(session){
-            setSession(session);
             setLoggedIn(true)
         } else {
+            const {data: {session}} = await supabase.auth.getSession();
+            setSession(session);
             setLoggedIn(false)
         }
     }
