@@ -21,7 +21,7 @@ router.post("/analyze", upload, async (req, res) => {
 
     const foodAnalysisFunc = {
         name: 'analyze_food_image', //this is the function name
-        description: 'Analyzes food image and returns structured nutrition data. ',
+        description: 'Analyzes food image and returns structured nutrition data. And separate the calories, carbs, and sugar in their own args. ',
         parameters: {
           type: 'object',
           properties: {
@@ -68,7 +68,7 @@ router.post("/analyze", upload, async (req, res) => {
         }]
       }
     const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
+      model: "gemini-2.5-flash-preview-04-17",
       contents: [
         {
             role: 'user',

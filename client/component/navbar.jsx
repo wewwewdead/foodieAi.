@@ -62,7 +62,12 @@ const Navbar = () =>{
             <img onClick={clickLogo} className="foodie-logo"  src={foodielogo}  alt="" />
             <p onClick={clickLogo} className="foodie">Foodie AI.</p>
             </div>
+
+            {!session ? (
+                    <button onClick={handleLogin} className='sign-up-bttn-mobile'>Join foodieAi.</button>
+                ) : (<button onClick={handleLogOut}>Log out</button>)}
             <div onClick={handleMenuClick} className="menu-bttn">
+
                 {!showSidebar ? <svg
                 xmlns="http://www.w3.org/2000/svg" 
                 height="24px" viewBox="0 -960 960 960" 
@@ -87,7 +92,7 @@ const Navbar = () =>{
                 <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
                 <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
                 {!session ? (
-                    <button onClick={handleLogin} className='sign-up-bttn'>Join foodAi.</button>
+                    <button onClick={handleLogin} className='sign-up-bttn'>Join foodieAi.</button>
                 ) : (<button onClick={handleLogOut}>Log out</button>)}
                 
             </div>
