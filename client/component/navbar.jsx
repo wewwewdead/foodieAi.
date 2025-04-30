@@ -10,11 +10,15 @@ const Navbar = () =>{
     const [activePath, setActivePath] = useState('');
     const [showSidebar, setShowSidebar] = useState(false)
     const [session, setSession] = useState(null);
+    const [loggedIn, setLoggedIn] = useState(false)
 
     const fetchUser = async() =>{
         const {data: {session}} = await supabase.auth.getSession();
         if(session){
             setSession(session);
+            setLoggedIn(true)
+        } else {
+            setLoggedIn(false)
         }
     }
 
@@ -37,7 +41,7 @@ const Navbar = () =>{
             return navigate('/login');
         }
         await supabase.auth.signOut();
-        navigate('/homepage')
+        return navigate('/login');
     }
 
     useEffect(() =>{
@@ -56,7 +60,7 @@ const Navbar = () =>{
             <p onClick={clickLogo} className="foodie">Foodie AI.</p>
             </div>
 
-            <button onClick={handleLogin} className='sign-up-bttn-mobile'>{`${session ? 'Log out' : 'Join foodieAi'}`}</button>
+            <button onClick={handleLogin} className='sign-up-bttn-mobile'>{`${loggedIn ? 'Log out' : 'Join foodieAi'}`}</button>
 
             <div onClick={handleMenuClick} className="menu-bttn">
 
@@ -84,7 +88,7 @@ const Navbar = () =>{
                 <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
                 <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
                 <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
-                <button onClick={handleLogin} className='sign-up-bttn'>{`${session ? 'Log out' : 'Join foodieAi'}`}</button>
+                <button onClick={handleLogin} className='sign-up-bttn'>{`${loggedIn? 'Log out' : 'Join foodieAi'}`}</button>
             </div>
               
         </div>
