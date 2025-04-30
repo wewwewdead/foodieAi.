@@ -80,11 +80,11 @@ const Navbar = () =>{
             </div>
             
             <div className={"navlinks"}>
-            <button onClick={handleLogin} className='sign-up-bttn'>{`${session ? 'Log out' : 'Join foodieAi'}`}</button>
                 <Link className ={`${activePath === '/homepage' ? 'active-link' : 'links'}`} to='/homepage'>Home</Link>
                 <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
                 <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
                 <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
+                <button onClick={handleLogin} className='sign-up-bttn'>{`${session ? 'Log out' : 'Join foodieAi'}`}</button>
             </div>
               
         </div>
