@@ -65,7 +65,7 @@ const Navbar = () =>{
 
             {!session ? (
                     <button onClick={handleLogin} className='sign-up-bttn-mobile'>Join foodieAi.</button>
-                ) : (<button onClick={handleLogOut}>Log out</button>)}
+                ) : (<button onClick={handleLogOut} className='sign-up-bttn-mobile'>Log out</button>)}
             <div onClick={handleMenuClick} className="menu-bttn">
 
                 {!showSidebar ? <svg
