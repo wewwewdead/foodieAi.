@@ -74,7 +74,6 @@ const Navbar = () =>{
             {loggedIn && (
                 <>
                  <button onClick={handleLogin} className='sign-up-bttn'>Logout</button>
-                 <button onClick={handleLogin} className='sign-up-bttn-mobile'>Logout</button>
                 </>     
             )}
 
