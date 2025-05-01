@@ -3,7 +3,6 @@ import { useNavigate, Link } from "react-router-dom";
 import foodielogo from '../src/assets/foodie.png'
 import { motion } from "framer-motion";
 import supabase from "../client/supabase";
-import { button, sup } from "framer-motion/client";
 
 const Navbar = () =>{
     const navigate = useNavigate();

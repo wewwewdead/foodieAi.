@@ -5,6 +5,7 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 import { ClipLoader } from 'react-spinners';
 import { motion } from "framer-motion";
+import supabase from "../client/supabase";
 
 
 const FeedPage = ()=> {
@@ -26,10 +27,22 @@ const FeedPage = ()=> {
     const [switchButton, setSwitchButton] = useState(false);
     const [analyzing, setAnalyzing] = useState(false)//loading state
 
+    const [session, setSession] = useState(null);
+
     const fileRef = useRef(null);
     const contentRef = useRef(null)
 
     const typingSpeed = 50 //miliseconds per character
+
+    const fetchUser = async() => {
+        const {data: {session}} = await supabase.auth.getSession();
+        console.log(session)
+        setSession(session)    
+    }
+
+    useEffect(() => {
+        fetchUser();
+    }, [])
 
     const handleClickUpload = (e) =>{
         e.preventDefault();
@@ -213,7 +226,65 @@ const FeedPage = ()=> {
                     <h2 style={{color: 'rgb(255, 39, 39)'}}>{errorMessage}</h2>
                 ) : ( analysis && (
                         <>
-                        <h2 className="food-name">{analysis.food}</h2>
+
+                        <div className="calorie-sugar-carbs">
+                            <motion.h2 
+                            className="kcal"
+                            initial={{opacity: 0, scale: 0.8}}
+                            whileInView={{opacity:1, scale: 1}}
+                            transition={{duration: 0.5}}
+                            viewport={{once:true}}
+                            >
+                                {analysis.calories} kcal
+                            </motion.h2>
+
+                            <motion.h2 
+                            className="food-name"
+                            initial={{opacity: 0, scale: 0.8}}
+                            whileInView={{opacity:1, scale: 1}}
+                            transition={{duration: 0.8}}
+                            viewport={{once:true}}
+                            >
+                                {analysis.food}
+                            </motion.h2>
+
+                            <motion.h3 
+                            initial={{opacity: 0, scale: 0.8}}
+                            whileInView={{opacity:1, scale: 1}}
+                            transition={{duration: 1.2}}
+                            viewport={{once:true}}
+                            className="sugar"
+                            >
+                                Sugar: {analysis.sugar}g
+                            </motion.h3>
+                            <motion.h3 className="carbs"
+                            initial={{opacity: 0, scale: 0.8}}
+                            whileInView={{opacity:1, scale: 1}}
+                            transition={{duration: 1.5}}
+                            viewport={{once:true}}
+                            >
+                                Carbs: {analysis.carbs}g
+                            </motion.h3>
+
+                            <div className="save-food-bttn-container">
+                                <h3>Save this in to your daily tracker?</h3>
+                                <div className="bttn-container">
+                                    <motion.button 
+                                    className="cancel-bttn "
+                                    whileHover={{scale:1.06}}
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -880 960 960" width="24px" fill="rgb(255, 248, 248)"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                                    </motion.button>
+                                    <motion.button 
+                                    className="save-bttn"
+                                    whileHover={{scale:1.06}}
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -870 960 960" width="24px" fill="rgb(255, 248, 248)"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+                                    </motion.button>
+                                </div>       
+                            </div>
+
+                        </div>
                         <div ref={contentRef} className="analysis-content">
                             
                             <motion.div 

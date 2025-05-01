@@ -37,7 +37,7 @@ router.post("/analyze", upload, async (req, res) => {
             },
             calories:{
               type:'number',
-              description:'Estimated total calories of the food in grams. Return only the numerical value'
+              description:'Estimated total calories of the food in kcal. Return only the numerical value'
             },
             carbs: {
               type:'number',

@@ -5,6 +5,10 @@
   padding: 0 auto;
   text-align: center;
 }
+h3{
+  padding: 0;
+  margin: 0;
+}
 .hide{
   display: none;
 }
@@ -220,6 +224,45 @@ form{
   align-self: flex-start;
   margin: 0rem 0rem 1rem 1rem;
 }
+.calorie-sugar-carbs{
+  color: rgb(19, 57, 0);
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: fit-content;
+  margin: 0 0 1rem 0;
+}
+.food-name{
+  font-size:  1.2rem;
+}
+.kcal{
+  font-weight: 960;
+  letter-spacing: 3px;
+}
+.save-food-bttn-container{
+  margin: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bttn-container{
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+.save-bttn{
+  background-color: rgb(0, 97, 71);
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+}
+.cancel-bttn{
+  background-color: rgb(206, 65, 0);
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
