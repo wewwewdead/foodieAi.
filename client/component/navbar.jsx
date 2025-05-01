@@ -59,7 +59,10 @@ const Navbar = () =>{
             <p onClick={clickLogo} className="foodie">Foodie AI.</p>
             </div>
 
-            <button onClick={handleLogin} className='sign-up-bttn-mobile'>{`${loggedIn ? 'Log out' : 'Join foodieAi'}`}</button>
+            {!loggedIn && (
+                <button onClick={handleLogin} className='sign-up-bttn-mobile'>Join foodieAi</button>
+            )}
+            
 
             <div onClick={handleMenuClick} className="menu-bttn">
 
@@ -87,7 +90,6 @@ const Navbar = () =>{
                 <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
                 <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
                 <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
-                <button onClick={handleLogin} className='sign-up-bttn'>{`${loggedIn? 'Log out' : 'Join foodieAi'}`}</button>
             </div>
               
         </div>
@@ -101,8 +103,10 @@ const Navbar = () =>{
         <Link className={`${activePath === '/homepage' ? 'active-link' : 'links'}`} to='/homepage'>Home</Link>
         <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
         <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
-
         <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
+        {loggedIn && (
+                <button onClick={handleLogin} className='sign-up-bttn-mobile'>Logout</button>
+            )}
         </motion.div>
         </>
         
