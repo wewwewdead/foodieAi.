@@ -63,9 +63,7 @@ const FeedPage = ()=> {
             userId: session.user.id
         }
         const {success} = await saveData(data);
-        if(success){
-            setSubmitting(false);
-        }
+        setSubmitting(false);
     }
     const handleClickUpload = (e) =>{
         e.preventDefault();
