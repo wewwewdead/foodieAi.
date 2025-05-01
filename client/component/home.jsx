@@ -58,7 +58,7 @@ const FeedPage = ()=> {
             carbs: analysis.carbs,
             userId: session.user.id
         }
-        saveData(data);
+        await saveData(data);
     }
     const handleClickUpload = (e) =>{
         e.preventDefault();
