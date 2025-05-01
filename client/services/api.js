@@ -33,7 +33,6 @@ export const saveData = async(data) =>{
     })
     const result = await response.json();
     if(!response.ok){
-      const error = await response.json();
       throw new Error(error.message || 'failed to save data!');
     }
     return result;
