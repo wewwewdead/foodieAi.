@@ -68,6 +68,9 @@ const Navbar = () =>{
             {!loggedIn && (
                 <button onClick={handleLogin} className='sign-up-bttn'>Join foodieAi</button>
             )}
+            {loggedIn && (
+                <button onClick={handleLogin} className='sign-up-bttn'>Logout</button>
+            )}
 
             <div onClick={handleMenuClick} className="menu-bttn">
 
