@@ -322,6 +322,7 @@ form{
     border-radius: 20px;
   }
   .sign-up-bttn-mobile{
+    width: fit-content;
     display: block;
     background-color: rgb(184 202 56);
     color: #fcfeff;
