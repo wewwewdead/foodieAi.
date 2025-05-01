@@ -22,21 +22,21 @@ export const uploadFood = async (postData) => {
 };
 export const saveData = async(data) =>{
   console.log(data);
-  const headers = {
-    'Content-Type': 'application.json',
-  }
 
   try {
     const response = await fetch(`${BASE_URL || 'http://localhost:3001'}/save`, {
       method: 'POST',
-      headers,
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(data)
     })
-
+    const result = await response.json();
     if(!response.ok){
       const error = await response.json();
       throw new Error(error.message || 'failed to save data!');
     }
+    return result;
   } catch (error) {
     console.error("saving failed:", error.message);
     throw error; 
