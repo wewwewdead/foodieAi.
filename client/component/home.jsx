@@ -5,7 +5,7 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 import { ClipLoader } from 'react-spinners';
 import { motion } from "framer-motion";
-import supabase from "../client/supabase";
+import supabase from "../client/supabase.js";
 
 
 const FeedPage = ()=> {
@@ -53,7 +53,7 @@ const FeedPage = ()=> {
             return navigate('/login');
         }
         const data = {
-            kcal: analysis.calories,
+            cal: analysis.calories,
             sugar: analysis.sugar,
             carbs: analysis.carbs,
             userId: session.user.id
