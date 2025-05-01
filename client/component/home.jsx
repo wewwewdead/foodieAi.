@@ -4,8 +4,9 @@ import { uploadFood, saveData } from "../services/api";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import { ClipLoader } from 'react-spinners';
-import { motion } from "framer-motion";
+import { motion, setDragLock } from "framer-motion";
 import supabase from "../client/supabase.js";
+import { p } from "framer-motion/client";
 
 
 const FeedPage = ()=> {
@@ -26,6 +27,7 @@ const FeedPage = ()=> {
 
     const [switchButton, setSwitchButton] = useState(false);
     const [analyzing, setAnalyzing] = useState(false)//loading state
+    const [sumbiting, setSubmitting] = useState(false)//loading state
 
     const [session, setSession] = useState(null);
 
@@ -52,13 +54,18 @@ const FeedPage = ()=> {
         if(!session){
             return navigate('/login');
         }
+        setSubmitting(true)
         const data = {
             cal: analysis.calories,
             sugar: analysis.sugar,
             carbs: analysis.carbs,
+            foodName: analysis.food,
             userId: session.user.id
         }
-        await saveData(data);
+        const {success} = await saveData(data);
+        if(success){
+            setSubmitting(false);
+        }
     }
     const handleClickUpload = (e) =>{
         e.preventDefault();
@@ -284,6 +291,12 @@ const FeedPage = ()=> {
 
                             <div className="save-food-bttn-container">
                                 <h3>Save this in to your daily tracker?</h3>
+                                <div className="loading-container">
+                                    {sumbiting && (
+                                        <p>Saving..</p>   
+                                    )}
+                                    <ClipLoader loading={sumbiting} size={20} color="rgb(184 202 56)"/>
+                                </div>
                                 <div className="bttn-container">
                                     <motion.button 
                                     className="cancel-bttn "

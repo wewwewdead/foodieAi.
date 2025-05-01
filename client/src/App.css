@@ -286,6 +286,8 @@ form{
   color: #888;
 }
 .loading-container{
+  height: auto;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
