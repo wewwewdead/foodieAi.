@@ -66,7 +66,10 @@ const Navbar = () =>{
                 <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
             </div>
             {!loggedIn && (
+                <>
                 <button onClick={handleLogin} className='sign-up-bttn'>Join foodieAi</button>
+                <button onClick={handleLogin} className='sign-up-bttn-mobile'>Join foodieAi</button>
+                </>
             )}
             {loggedIn && (
                 <>
