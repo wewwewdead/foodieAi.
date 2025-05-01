@@ -32,6 +32,7 @@
   width: 45%;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 .links{
@@ -285,6 +286,7 @@ form{
     position: fixed;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 1rem 0 1rem 0;
     background-color: #ffffff5c;
     backdrop-filter: blur(10px);
@@ -328,6 +330,9 @@ form{
     color: #fcfeff;
     padding: .6rem;
     border-radius: 10px;
+    font-size: 0.8rem;
+  }
+  .sign-up-bttn{
     font-size: 0.8rem;
   }
 }
