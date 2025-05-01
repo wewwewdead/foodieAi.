@@ -44,6 +44,14 @@ const FeedPage = ()=> {
         fetchUser();
     }, [])
 
+    const handleSave = async(e)=>{
+        e.preventDefault()
+        e.stopPropagation()
+        console.log('save clicked')
+        if(!session){
+            return console.log('no user!')
+        }
+    }
     const handleClickUpload = (e) =>{
         e.preventDefault();
         if(fileRef.current){
@@ -276,6 +284,7 @@ const FeedPage = ()=> {
                                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -880 960 960" width="24px" fill="rgb(255, 248, 248)"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
                                     </motion.button>
                                     <motion.button 
+                                    onClick={handleSave}
                                     className="save-bttn"
                                     whileHover={{scale:1.06}}
                                     >
