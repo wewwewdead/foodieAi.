@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { uploadFood } from "../services/api";
+import { uploadFood, saveData } from "../services/api";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import { ClipLoader } from 'react-spinners';
@@ -31,6 +31,7 @@ const FeedPage = ()=> {
 
     const fileRef = useRef(null);
     const contentRef = useRef(null)
+    const navigate = useNavigate();
 
     const typingSpeed = 50 //miliseconds per character
 
@@ -49,8 +50,15 @@ const FeedPage = ()=> {
         e.stopPropagation()
         console.log('save clicked')
         if(!session){
-            return console.log('no user!')
+            return navigate('/login');
         }
+        const data = {
+            kcal: analysis.calories,
+            sugar: analysis.sugar,
+            carbs: analysis.carbs,
+            userId: session.user.id
+        }
+        saveData(data);
     }
     const handleClickUpload = (e) =>{
         e.preventDefault();
@@ -243,7 +251,7 @@ const FeedPage = ()=> {
                             transition={{duration: 0.5}}
                             viewport={{once:true}}
                             >
-                                {analysis.calories} kcal
+                                {analysis.calories} calories
                             </motion.h2>
 
                             <motion.h2 
