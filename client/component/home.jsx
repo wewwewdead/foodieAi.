@@ -330,6 +330,7 @@ const FeedPage = ()=> {
                                         </motion.button>
                                         <motion.button 
                                         onClick={handleSave}
+                                        disabled={sumbiting}
                                         className="save-bttn"
                                         whileHover={{scale:1.06}}
                                         >
@@ -405,8 +406,8 @@ const FeedPage = ()=> {
                         backgroundColor: 'rgba(0, 0, 0, 0.5)'
                     },
                     content: {
-                        width: '300px',
-                        height: '200px',
+                        width: '60%',
+                        height: '100px',
                         zIndex:'10000',
                         margin: 'auto',
                         padding: '20px',
