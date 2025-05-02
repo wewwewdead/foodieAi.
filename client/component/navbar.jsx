@@ -60,9 +60,16 @@ const Navbar = () =>{
 
             <div className={"navlinks"}>
                 <Link className ={`${activePath === '/homepage' ? 'active-link' : 'links'}`} to='/homepage'>Home</Link>
-                <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
-                <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
-                <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
+                {loggedIn ? (
+                    <Link className={`${activePath === '/daiyltracker' ? 'active-link' : 'links'}`}>Daily tracker</Link>
+                ) : (
+                    <>
+                    <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
+                    <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
+                    <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
+                    </>
+                )}
+                
             </div>
             {!loggedIn && (
                 <>
