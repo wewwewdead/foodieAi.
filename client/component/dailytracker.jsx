@@ -19,12 +19,16 @@ const DailyTracker = () =>{
         }
         const userId = session.user.id
         const response = await fetchFoodLogs(userId)
-        console.log(response)
+        setData(response)
     }
 
     useEffect(() =>{
         fetchData();
     }, [])
+    
+    useEffect(() =>{
+        console.log(data)
+    }, [data])
     
     return (
         <>
