@@ -3,6 +3,18 @@ import { useNavigate, Link } from "react-router-dom";
 import foodielogo from '../src/assets/foodie.png'
 import { motion } from "framer-motion";
 import supabase from "../client/supabase";
+import { label, path } from "framer-motion/client";
+
+const PUBLIC_URL = [
+    {path: '/homepage', label: 'Home'},
+    {path: '/mystory', label: 'My Story'},
+    {path: '/about', label: 'About'},
+    {path: '/learnabout', label: 'Education'},
+];
+const AUTH_URL  = [
+    {path: '/home', label: 'Home'},
+    {path: '/dailtytracker', label: 'Daily Tracker'}
+]
 
 const Navbar = () =>{
     const navigate = useNavigate();
@@ -50,6 +62,8 @@ const Navbar = () =>{
     useEffect(() =>{
         fetchUser()
     }, [session])
+
+    const navLinks = session ? AUTH_URL : PUBLIC_URL; //conditional for auth users or public users
     return(
         <>
         <div className="navbar">
@@ -59,18 +73,17 @@ const Navbar = () =>{
             </div>
 
             <div className={"navlinks"}>
-                <Link className ={`${activePath === '/homepage' ? 'active-link' : 'links'}`} to='/homepage'>Home</Link>
-                {loggedIn ? (
-                    <Link className={`${activePath === '/dailytracker' ? 'active-link' : 'links'}`} to='/dailytracker'>Daily tracker</Link>
-                ) : (
-                    <>
-                    <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
-                    <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
-                    <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
-                    </>
-                )}
-                
+                {navLinks.map(({path, label}) => (
+                    <Link
+                    key={path}
+                    className={location.pathname === path ? 'active-link' : 'links'}
+                    to={path}
+                    >
+                        {label}
+                    </Link>
+                ))}
             </div>
+
             {!loggedIn && (
                 <>
                 <button onClick={handleLogin} className='sign-up-bttn'>Join foodieAi</button>
@@ -113,10 +126,15 @@ const Navbar = () =>{
         viewport={{once: true}}
         className={!showSidebar ? "hide" : "sidebar"}
         >
-        <Link className={`${activePath === '/homepage' ? 'active-link' : 'links'}`} to='/homepage'>Home</Link>
-        <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
-        <Link className={`${activePath === '/about' ? 'active-link' : 'links'}`} to='/about'>About</Link>
-        <Link className={`${activePath === '/learnabout' ? 'active-link' : 'links'}`} to='/learnabout'>Education</Link>
+            {navLinks.map(({path, label}) => (
+                <Link
+                key={path}
+                className={location.pathname === path ? 'active-link' : 'links'}
+                to={path}
+                >
+                {label}
+                </Link>
+            ))}
         {loggedIn && (
                 <button onClick={handleLogin} className='sign-up-bttn-mobile'>Logout</button>
             )}
