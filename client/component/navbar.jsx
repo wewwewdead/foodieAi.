@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import foodielogo from '../src/assets/foodie.png'
 import { motion } from "framer-motion";
 import supabase from "../client/supabase";
-import { label, path } from "framer-motion/client";
+import { label, path, tr } from "framer-motion/client";
 
 const PUBLIC_URL = [
     {path: '/homepage', label: 'Home'},
@@ -22,14 +22,17 @@ const Navbar = () =>{
     const [showSidebar, setShowSidebar] = useState(false)
     const [session, setSession] = useState(null);
     const [loggedIn, setLoggedIn] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
 
     const fetchUser = async() =>{
+        setIsLoading(true)
         if(session){
             setLoggedIn(true)
         } else {
             const {data: {session}} = await supabase.auth.getSession();
             setSession(session);
         }
+        setIsLoading(false)
     }
 
     const clickLogo = (e) => {
@@ -84,17 +87,19 @@ const Navbar = () =>{
                 ))}
             </div>
 
-            {!loggedIn && (
-                <>
-                <button onClick={handleLogin} className='sign-up-bttn'>Join foodieAi</button>
-                <button onClick={handleLogin} className='sign-up-bttn-mobile'>Join foodieAi</button>
-                </>
+            {isLoading ? null : (
+                !loggedIn ? (
+                    <>
+                    <button onClick={handleLogin} className='sign-up-bttn'>Join foodieAi</button>
+                    <button onClick={handleLogin} className='sign-up-bttn-mobile'>Join foodieAi</button>
+                    </>
+                ) : (
+                    <>
+                     <button onClick={handleLogin} className='sign-up-bttn'>Logout</button>
+                    </> 
+                )
             )}
-            {loggedIn && (
-                <>
-                 <button onClick={handleLogin} className='sign-up-bttn'>Logout</button>
-                </>     
-            )}
+            
 
             <div onClick={handleMenuClick} className="menu-bttn">
 
