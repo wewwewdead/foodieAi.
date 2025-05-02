@@ -298,7 +298,12 @@ const FeedPage = ()=> {
                                 Carbs: {analysis.carbs}g
                             </motion.h3>
 
-                            <div className="save-food-bttn-container">
+                            <motion.div  
+                            initial={{opacity: 1, scale:1}}
+                            exit={{opacity:0 , scale: 0.8, transition: {duration: 0.5}}}
+                            transition={{duration: 0.2}}
+                            className="save-food-bttn-container"
+                            >
                                 <h3>Save this in to your daily tracker?</h3>
                                 <div className="loading-container">
                                     {sumbiting && (
@@ -308,13 +313,9 @@ const FeedPage = ()=> {
                                 </div>
 
                                 {isVisible && (
-                                    <div className="bttn-container"
-                                    initial={{opacity: 1, scale:1}}
-                                    exit={{opacity:0 , scale: 0.8, transition: {duration: 0.5}}}
-                                    transition={{duration: 0.2}}
+                                    <div className="bttn-container"           
                                     >
-                                    <motion.button 
-                                    
+                                    <motion.button                                   
                                     className="cancel-bttn "
                                     whileHover={{scale:1.06}}
                                     onClick={handleCancel}
@@ -331,7 +332,7 @@ const FeedPage = ()=> {
                                 </div> 
                                 )}  
 
-                            </div>
+                            </motion.div>
 
                         </div>
                         <div ref={contentRef} className="analysis-content">
