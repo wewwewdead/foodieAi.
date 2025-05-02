@@ -8,6 +8,7 @@ import About from '../component/about'
 import MyStory from '../component/mystory'
 import Login from '../component/login'
 import AboutFood from '../component/education'
+import DailyTracker from '../component/dailytracker'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='mystory' element={<MyStory/>}/>
         <Route path='learnabout' element={<AboutFood/>}/>
         <Route path='login' element={<Login/>}/>
+        <Route path='dailytracker' element={<DailyTracker/>}/>
     </Routes>
       
   )

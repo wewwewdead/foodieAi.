@@ -28,6 +28,7 @@ const FeedPage = ()=> {
     const [switchButton, setSwitchButton] = useState(false);
     const [analyzing, setAnalyzing] = useState(false)//loading state
     const [sumbiting, setSubmitting] = useState(false)//loading state
+    const [isVisible, setIsVisible]= useState(true); // visibe state of the save button
 
     const [session, setSession] = useState(null);
 
@@ -47,10 +48,19 @@ const FeedPage = ()=> {
         fetchUser();
     }, [])
 
+    const handleCancel = (e) =>{
+        e.preventDefault();
+        e.stopPropagation();
+        if(!session){
+            return navigate('/login');
+        }
+        setIsVisible(false);
+    }
+
     const handleSave = async(e)=>{
         e.preventDefault()
         e.stopPropagation()
-        console.log('save clicked')
+        // console.log('save clicked')
         if(!session){
             return navigate('/login');
         }
@@ -65,6 +75,7 @@ const FeedPage = ()=> {
         const {success} = await saveData(data);
         setSubmitting(false);
     }
+
     const handleClickUpload = (e) =>{
         e.preventDefault();
         if(fileRef.current){
@@ -295,10 +306,18 @@ const FeedPage = ()=> {
                                     )}
                                     <ClipLoader loading={sumbiting} size={20} color="rgb(184 202 56)"/>
                                 </div>
-                                <div className="bttn-container">
+
+                                {isVisible && (
+                                    <div className="bttn-container"
+                                    initial={{opacity: 1, scale:1}}
+                                    exit={{opacity:0 , scale: 0.8, transition: {duration: 0.5}}}
+                                    transition={{duration: 0.2}}
+                                    >
                                     <motion.button 
+                                    
                                     className="cancel-bttn "
                                     whileHover={{scale:1.06}}
+                                    onClick={handleCancel}
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -880 960 960" width="24px" fill="rgb(255, 248, 248)"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
                                     </motion.button>
@@ -309,7 +328,9 @@ const FeedPage = ()=> {
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -870 960 960" width="24px" fill="rgb(255, 248, 248)"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
                                     </motion.button>
-                                </div>       
+                                </div> 
+                                )}  
+
                             </div>
 
                         </div>
