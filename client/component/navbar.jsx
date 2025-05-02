@@ -18,20 +18,17 @@ const AUTH_URL  = [
 
 const Navbar = () =>{
     const navigate = useNavigate();
-    const [activePath, setActivePath] = useState('');
     const [showSidebar, setShowSidebar] = useState(false)
     const [session, setSession] = useState(null);
     const [loggedIn, setLoggedIn] = useState(false)
     const [isLoading, setIsLoading] = useState(false);
 
     const fetchUser = async() =>{
-        setIsLoading(true)
         const {data: {session}} = await supabase.auth.getSession();
         if(session){
             setLoggedIn(true)
             setSession(session)
         }
-        setIsLoading(false)
     }
 
     const clickLogo = (e) => {
@@ -55,11 +52,6 @@ const Navbar = () =>{
         await supabase.auth.signOut();
         return navigate('/login');
     }
-
-    useEffect(() =>{
-        setActivePath(location.pathname)
-        
-    }, [location.pathname])
 
     useEffect(() =>{
         fetchUser()
@@ -86,20 +78,11 @@ const Navbar = () =>{
                 ))}
             </div>
 
-            {isLoading ? null : (
-                !loggedIn ? (
-                    <>
-                    <button onClick={handleLogin} className='sign-up-bttn'>Join foodieAi</button>
-                    </>
-                ) : (
-                    !isLoading ? (
-                    <>
-                     <button onClick={handleLogin} className='sign-up-bttn'>Logout</button>
-                    </> 
-                    ) : (null)    
-                )
-            )}
-            
+            {loggedIn ? (
+                <button onClick={handleLogin} className='sign-up-bttn'>Logout</button>
+            ) : (
+                <button onClick={handleLogin} className='sign-up-bttn'>Join foodieAi</button>
+            )}    
 
             <div onClick={handleMenuClick} className="menu-bttn">
 
