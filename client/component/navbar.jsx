@@ -93,9 +93,11 @@ const Navbar = () =>{
                     <button onClick={handleLogin} className='sign-up-bttn-mobile'>Join foodieAi</button>
                     </>
                 ) : (
+                    !isLoading ? (
                     <>
                      <button onClick={handleLogin} className='sign-up-bttn'>Logout</button>
                     </> 
+                    ) : (null)    
                 )
             )}
             
