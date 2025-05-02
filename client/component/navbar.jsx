@@ -90,7 +90,6 @@ const Navbar = () =>{
                 !loggedIn ? (
                     <>
                     <button onClick={handleLogin} className='sign-up-bttn'>Join foodieAi</button>
-                    <button onClick={handleLogin} className='sign-up-bttn-mobile'>Join foodieAi</button>
                     </>
                 ) : (
                     !isLoading ? (
