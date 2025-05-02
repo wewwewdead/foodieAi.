@@ -12,7 +12,7 @@ const PUBLIC_URL = [
     {path: '/learnabout', label: 'Education'},
 ];
 const AUTH_URL  = [
-    {path: '/home', label: 'Home'},
+    {path: '/homepage', label: 'Home'},
     {path: '/dailtytracker', label: 'Daily Tracker'}
 ]
 
