@@ -44,6 +44,15 @@ const DailyTracker = () =>{
             <div className="app-container">
                 <div className="app-body-container">
                 <div className="food-data-parent">
+                <motion.div
+                className="date-today"
+                >
+                    <p>Today, {new Date().toLocaleDateString('en-US', {
+                        day: 'numeric',
+                        month: 'long',
+                        })}</p>
+                </motion.div>
+
                     <motion.div 
                     initial={{opacity: 0}}
                     animate={!isLoading ? {opacity: 1, transition:{duration: 0.5, ease: 'easeInOut'}} : {}}

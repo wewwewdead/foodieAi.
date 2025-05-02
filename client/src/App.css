@@ -302,7 +302,7 @@ form{
   gap: 1rem;
   padding: 1rem 2rem;
   border-radius: 15px;
-  background: linear-gradient(to top left, rgb(184 202 56), rgb(226, 244, 93));
+  background: linear-gradient(to bottom left, rgb(184 202 56), rgb(226, 244, 93));
 }
 .food-data-container{
   display: flex;
@@ -347,6 +347,12 @@ form{
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+}
+.date-today{
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 680;
 }
 @media (max-width: 450px){
   .menu-bttn{
