@@ -63,7 +63,7 @@ const Navbar = () =>{
 
     useEffect(() =>{
         fetchUser()
-    }, [session])
+    }, [])
 
     const navLinks = session ? AUTH_URL : PUBLIC_URL; //conditional for auth users or public users
     return(
