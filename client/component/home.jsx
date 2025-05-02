@@ -6,7 +6,7 @@ import Footer from "./footer";
 import { ClipLoader } from 'react-spinners';
 import { motion, AnimatePresence } from "framer-motion";
 import supabase from "../client/supabase.js";
-
+import Modal from 'react-modal';
 
 
 const FeedPage = ()=> {
@@ -29,6 +29,7 @@ const FeedPage = ()=> {
     const [analyzing, setAnalyzing] = useState(false)//loading state
     const [sumbiting, setSubmitting] = useState(false)//loading state
     const [isVisible, setIsVisible]= useState(true); // visibe state of the save button
+    const [showModal, setShowModal] = useState(false);
 
     const [session, setSession] = useState(null);
 
@@ -51,9 +52,9 @@ const FeedPage = ()=> {
     const handleCancel = (e) =>{
         e.preventDefault();
         e.stopPropagation();
-        if(!session){
-            return navigate('/login');
-        }
+        // if(!session){
+        //     return navigate('/login');
+        // }
         setIsVisible(false);
     }
 
@@ -73,7 +74,9 @@ const FeedPage = ()=> {
             userId: session.user.id
         }
         const {success} = await saveData(data);
+        setIsVisible(false)
         setSubmitting(false);
+        setShowModal(true)
     }
 
     const handleClickUpload = (e) =>{
@@ -123,6 +126,7 @@ const FeedPage = ()=> {
 
     const handleSubmit = async (e) => {
         setSwitchButton(!switchButton)
+        setIsVisible(true)
         setAnalyzing(true)
         e.preventDefault();
         setWelcomeMessage('')
@@ -336,7 +340,7 @@ const FeedPage = ()=> {
                                 </motion.div>     
                             )}
                             </AnimatePresence>
-                            
+
                         </div>
                         <div ref={contentRef} className="analysis-content">
                             
@@ -392,6 +396,30 @@ const FeedPage = ()=> {
                 
                 </div>    
                 </div>
+                <Modal
+                isOpen={showModal}
+                onRequestClose={() => setShowModal(false)}
+                contentLabel="food data Uploaded Modal"
+                style={{
+                    overlay: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)'
+                    },
+                    content: {
+                        width: '300px',
+                        height: '200px',
+                        zIndex:'10000',
+                        margin: 'auto',
+                        padding: '20px',
+                        borderRadius: '8px',
+                        textAlign: 'center'
+                    },
+                }}
+                >
+                    <h3>Food was saved in your daily tracker succesfully</h3>
+                    <button onClick={()=> setShowModal(false)}>
+                        Close
+                    </button>
+                </Modal>
                 <Footer/>   
             </div>
         </div>
