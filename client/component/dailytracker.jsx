@@ -13,7 +13,7 @@ const DailyTracker = () =>{
     const navigate = useNavigate();
 
     const fetchData = async() => {
-        const {data: {session}} = supabase.auth.getSession();
+        const {data: {session}} = await supabase.auth.getSession();
         if(!session){
             return navigate('/login');
         }

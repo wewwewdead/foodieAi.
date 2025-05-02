@@ -43,6 +43,7 @@ export const saveData = async(data) =>{
 }
 
 export const fetchFoodLogs = async(userId) => {
+  // console.log(userId)
   const response = await fetch(`${BASE_URL || 'http://localhost:3001 '}/getFoodLogs?userId=${userId}`)
   if(!response.ok){
     const error = await response.json();
