@@ -4,9 +4,9 @@ import { uploadFood, saveData } from "../services/api";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import { ClipLoader } from 'react-spinners';
-import { motion, setDragLock } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import supabase from "../client/supabase.js";
-import { p } from "framer-motion/client";
+
 
 
 const FeedPage = ()=> {
@@ -298,10 +298,11 @@ const FeedPage = ()=> {
                                 Carbs: {analysis.carbs}g
                             </motion.h3>
 
+                            <AnimatePresence>
                             {isVisible && (
                                 <motion.div  
                                 initial={{opacity: 1, scale:1}}
-                                exit={{opacity:0 , scale: 0.8, transition: {duration: 0.5}}}
+                                exit={{opacity:0 , scale: 0.8, transition: {duration: 0.3}}}
                                 transition={{duration: 0.2}}
                                 className="save-food-bttn-container"
                                 >
@@ -334,8 +335,8 @@ const FeedPage = ()=> {
     
                                 </motion.div>     
                             )}
+                            </AnimatePresence>
                             
-
                         </div>
                         <div ref={contentRef} className="analysis-content">
                             
