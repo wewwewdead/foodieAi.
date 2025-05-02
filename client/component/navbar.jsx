@@ -61,7 +61,7 @@ const Navbar = () =>{
             <div className={"navlinks"}>
                 <Link className ={`${activePath === '/homepage' ? 'active-link' : 'links'}`} to='/homepage'>Home</Link>
                 {loggedIn ? (
-                    <Link className={`${activePath === '/daiyltracker' ? 'active-link' : 'links'}`}>Daily tracker</Link>
+                    <Link className={`${activePath === '/dailytracker' ? 'active-link' : 'links'}`} to='/dailytracker'>Daily tracker</Link>
                 ) : (
                     <>
                     <Link className={`${activePath === '/mystory' ? 'active-link' : 'links'}`} to='/mystory'>My story</Link>
