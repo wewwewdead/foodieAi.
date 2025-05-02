@@ -13,7 +13,7 @@ const PUBLIC_URL = [
 ];
 const AUTH_URL  = [
     {path: '/homepage', label: 'Home'},
-    {path: '/dailtytracker', label: 'Daily Tracker'}
+    {path: '/dailytracker', label: 'Daily Tracker'}
 ]
 
 const Navbar = () =>{
