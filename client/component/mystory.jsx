@@ -69,7 +69,7 @@ const MyStory = () =>{
                                         <p>I was curious to the point that I grab my phone and ask <span>chatGPT</span> to analyze the bread for me.</p>
                                         <p>The results were helpful, but it made me think: hmmh? <span>"What if I could hack this process and build something that more accessible and easy?</span></p>
                                         <br />
-                                        <p>Using my little programming skills, I decided to build a tool where I could simply upload or capture any food,
+                                        <p>Using my little programming skills, I decided to build a Ai assistant where I could simply upload or capture any food,
                                             and immediately get well structured, and easy to read informations.
                                         </p>
                                         <br />
