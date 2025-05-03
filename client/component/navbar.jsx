@@ -49,11 +49,11 @@ const Navbar = () => {
 
   const handleLogin = async (e) => {
     e.stopPropagation();
-    e.preventDefault();
     if (!session) {
       return navigate("/login");
     } else {
       await supabase.auth.signOut();
+      setLoggedIn(false)
       return navigate("/login");
     }
     
