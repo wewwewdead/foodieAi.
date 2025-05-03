@@ -52,11 +52,19 @@ const DailyTracker = () =>{
                         month: 'long',
                         })}</h2>
 
-                    <div
+                    <motion.div
+                    animate={{y:[0, 5, -4, 1, -3, 0], 
+                        transition: {
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: 'loop',
+                            ease: 'easeInOut'
+                        }
+                    }}
                     className="reminder"
                     >
                         <p>Daily tracker resets every 12:00 am</p>
-                    </div>
+                    </motion.div>
 
                 </motion.div>
 
