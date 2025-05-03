@@ -350,10 +350,24 @@ form{
   gap: 0.4rem;
 }
 .date-today{
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+  align-items: flex-start;
   color: #ffffff;
   font-weight: 680;
+}
+.reminder{
+  background-color: #ff911cfd;
+  padding: 0.2rem;
+  border-radius: 10px;
+  display: flex;
+  position: absolute;
+  top: 4px;
+  left: 100px;
+  font-weight: 450;
+  font-size: 0.7rem;
 }
 @media (max-width: 450px){
   .menu-bttn{

@@ -47,10 +47,25 @@ const DailyTracker = () =>{
                 <motion.div
                 className="date-today"
                 >
-                    <p>Today, {new Date().toLocaleDateString('en-US', {
+                    <h2>Today, {new Date().toLocaleDateString('en-US', {
                         day: 'numeric',
                         month: 'long',
-                        })}</p>
+                        })}</h2>
+
+                    <motion.div
+                    animate={{y:[0, 5, -4, 1, -3, 0], 
+                        transition: {
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: 'loop',
+                            ease: 'easeInOut'
+                        }
+                    }}
+                    className="reminder"
+                    >
+                        <p>Daily tracker resets every 12:00 am</p>
+                    </motion.div>
+
                 </motion.div>
 
                     <motion.div 
