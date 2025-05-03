@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import foodielogo from "../src/assets/foodie.png";
 import { motion } from "framer-motion";
 import supabase from "../client/supabase";
+import { sup } from "framer-motion/client";
 
 const PUBLIC_URL = [
   { path: "/homepage", label: "Home" },
@@ -24,9 +25,7 @@ const Navbar = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchUser = async () => {
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
+    const {data: { session }} = await supabase.auth.getSession();
     if (session) {
       setLoggedIn(true);
       setSession(session);
@@ -49,15 +48,16 @@ const Navbar = () => {
 
   const handleLogin = async (e) => {
     e.stopPropagation();
-    if (!session) {
-      return navigate("/login");
-    } else {
-      await supabase.auth.signOut();
-      setLoggedIn(false)
-      return navigate("/login");
+    if(!loggedIn){
+      navigate('/login')
     }
-    
   };
+  const handleLogout = async(e) =>{
+    e.stopPropagation();
+    await supabase.auth.signOut();
+    setLoggedIn(false)
+    navigate('/login')
+  }
 
   useEffect(() => {
     fetchUser();
@@ -96,7 +96,7 @@ const Navbar = () => {
         </div>
 
         {loggedIn ? (
-          <button onClick={handleLogin} className="sign-up-bttn">
+          <button onClick={handleLogout} className="sign-up-bttn">
             Logout
           </button>
         ) : (
@@ -148,7 +148,7 @@ const Navbar = () => {
         ))}
         {loggedIn && (
           <button
-            onClick={handleLogin}
+            onClick={handleLogout}
             className="sign-up-bttn-mobile"
           >
             Logout
