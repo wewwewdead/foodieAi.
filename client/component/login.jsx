@@ -7,6 +7,7 @@ import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { nav } from "framer-motion/client";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -17,16 +18,12 @@ const Login = () => {
         setSession(session)
     }
     useEffect(() =>{
+        window.scrollTo({top: 0, left: 0, behavior:'smooth'})
         fetchUser();
-
-        const {data: {subscription}} = supabase.auth.onAuthStateChange((event, session) => {
-            if(event === 'SIGNED_IN' && session){
-                navigate('/homepage')
-            }
-        })
-
-        return () => subscription?.unsubscribe();
-    }, [navigate])
+        if(session){
+            navigate('/homepage')
+        }
+    }, [navigate, session])
 
     const handleHome = (e) =>{
         e.stopPropagation()
@@ -34,7 +31,6 @@ const Login = () => {
     }
     return(
         <>
-        {!session ? (
             <div className="login-page">
 
             <div className="join-now-container">
@@ -114,12 +110,7 @@ const Login = () => {
                     </div>
                     
                 </div>
-            </div>
-            
-        ) : (
-            navigate('/homepage')
-        )}
-        
+            </div>        
         </>
     )
 }

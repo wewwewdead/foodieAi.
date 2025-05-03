@@ -46,7 +46,7 @@ const About =() => {
                         className="cards"
                         >
                             <h2>How I built <span>foodieAi.</span></h2>
-                            <p className="text">"foodiAi" was built with purpose and passion</p>
+                            <p className="text">"foodiAi" was built with purpose and passion.</p>
                             <p className="text">I combine cutting edge technology (GOOGLE GEMINI) with my knowledge
                                 on programming to make food analysis fast and accessible.
                             </p>

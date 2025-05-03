@@ -41,7 +41,7 @@ const FeedPage = ()=> {
 
     const fetchUser = async() => {
         const {data: {session}} = await supabase.auth.getSession();
-        console.log(session)
+        // console.log(session)
         setSession(session)    
     }
 

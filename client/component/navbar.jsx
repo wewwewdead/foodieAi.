@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useCallback, useRef, act } from "react";
+import React, { useState, useEffect, useCallback, useRef, act, use } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import foodielogo from "../src/assets/foodie.png";
 import { motion } from "framer-motion";
 import supabase from "../client/supabase";
-import { sup } from "framer-motion/client";
 
 const PUBLIC_URL = [
   { path: "/homepage", label: "Home" },
@@ -20,18 +19,17 @@ const AUTH_URL = [
 const Navbar = () => {
   const navigate = useNavigate();
   const [showSidebar, setShowSidebar] = useState(false);
+  const [loggedInText, setLoggedInText] = useState('');
   const [session, setSession] = useState(null);
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
   const fetchUser = async () => {
-    const {data: { userSession }} = await supabase.auth.getSession();
-    if (userSession) {
-      setLoggedIn(true);
-      setSession(userSession);
+    const {data: {session}} = await supabase.auth.getSession();
+    if (session) {
+      setLoggedInText('Log out')
+      setSession(session);
+      // console.log(session)
     } else {
-      setLoggedIn(false)
-      setSession(null)
+      setLoggedInText('Join FoodieAi.')
     }
   };
 
@@ -49,16 +47,14 @@ const Navbar = () => {
     setShowSidebar(!showSidebar);
   };
 
-  const handleLogin = async (e) => {
+  const handleLogin = async(e) => {
     e.stopPropagation();
-    if(!loggedIn){
-      navigate('/login')
-    }
+    navigate('/login')
   };
   const handleLogout = async(e) =>{
     e.stopPropagation();
     await supabase.auth.signOut();
-    setLoggedIn(false)
+    setSession(null)
     navigate('/login')
   }
 
@@ -96,17 +92,13 @@ const Navbar = () => {
               {label}
             </Link>
           ))}
+          <button 
+          className="sign-up-bttn"
+          onClick={session ? (e) => handleLogout(e) : (e) => handleLogin(e)}
+          >
+            {loggedInText}
+          </button>
         </div>
-
-        {loggedIn ? (
-          <button onClick={handleLogout} className="sign-up-bttn">
-            Logout
-          </button>
-        ) : (
-          <button onClick={handleLogin} className="sign-up-bttn">
-            Join foodieAi
-          </button>
-        )}
 
         <div onClick={handleMenuClick} className="menu-bttn">
           {!showSidebar ? (
@@ -149,14 +141,14 @@ const Navbar = () => {
             {label}
           </Link>
         ))}
-        {loggedIn && (
+
           <button
-            onClick={handleLogout}
+            onClick={session ? (e) => handleLogout(e) : (e) => handleLogin(e)}
             className="sign-up-bttn-mobile"
           >
-            Logout
+            {loggedInText}
           </button>
-        )}
+
       </motion.div>
     </>
   );
