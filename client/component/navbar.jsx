@@ -125,10 +125,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.1 }}
+      <div
         className={!showSidebar ? "hide" : "sidebar"}
       >
         {navLinks.map(({ path, label }) => (
@@ -148,7 +145,7 @@ const Navbar = () => {
             {loggedInText}
           </button>
 
-      </motion.div>
+      </div>
     </>
   );
 };
