@@ -12,6 +12,7 @@ import Modal from 'react-modal';
 const FeedPage = ()=> {
     const [file, setFile] = useState(null);
     const [analysis, setAnalysis] = useState('');
+    const [foodCoach, setFoodCoach] = useState('');
     const [errorMessage, setErrorMessage] = useState('')
     const [imagePreview, setImagePreview] = useState('');
     const [noFood, setNoFood] = useState('');
@@ -86,6 +87,7 @@ const FeedPage = ()=> {
             setErrorMessage('')
             setImagePreview('')
             setAnalysis('')
+            setFoodCoach('')
             setNoFood('')
             setSwitchButton(false)
             fileRef.current.value = ''
@@ -109,6 +111,7 @@ const FeedPage = ()=> {
             setImagePreview('')
         }
     }
+
     const newPhoto = (e) =>{
         e.preventDefault();
         e.stopPropagation();
@@ -118,6 +121,7 @@ const FeedPage = ()=> {
             setNoFood('')
             setImagePreview('')
             setAnalysis('')
+            setFoodCoach('')
             setFile(null)
             fileRef.current.value = ''
             fileRef.current.click();
@@ -133,6 +137,7 @@ const FeedPage = ()=> {
         setShowContent(true)
         setErrorMessage('')
         setAnalysis('')
+        setFoodCoach('')
         setNutrientsText('');
         setBenefitsText('');
         setDrawBacksText('');
@@ -156,7 +161,9 @@ const FeedPage = ()=> {
             return console.log(data.analysis)
           }
           console.log(data.analysis)
+          console.log(data.coach)
           setAnalysis(data.analysis)
+          setFoodCoach(data.coach)
         } catch (error) {
           console.error("Upload error:", error.message);
         } finally {
@@ -301,6 +308,15 @@ const FeedPage = ()=> {
                             >
                                 Carbs: {analysis.carbs}g
                             </motion.h3>
+
+                            <div 
+                            className="bubble-message"
+                            >
+                                <div className="message-container">
+                                    <p>{analysis.coachPrompt}</p>
+                                </div>
+                                <small>{foodCoach} ~~</small>
+                            </div>
 
                             <AnimatePresence>
                             {isVisible && (
