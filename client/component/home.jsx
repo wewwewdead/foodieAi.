@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { uploadFood, saveData } from "../services/api";
-import Navbar from "./navbar";
+import Navbar from "./navbar.jsx";
 import Footer from "./footer";
 import { ClipLoader } from 'react-spinners';
 import { motion, AnimatePresence } from "framer-motion";

@@ -1,13 +1,11 @@
 import Navbar from "./navbar";
 import Footer from "./footer";
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { ClipLoader } from 'react-spinners';
 import supabase from "../client/supabase";
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { nav } from "framer-motion/client";
 
 const Login = () => {
     const navigate = useNavigate();
