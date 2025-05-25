@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./component/About";
 import DailyTracker from "./component/DailyTracker";
@@ -12,7 +12,8 @@ import "./landingPage.css";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<LandingPage />} />
+      <Route path="/" element={<Navigate to="/landingpage" replace />} />
+      <Route path="/landingpage" element={<LandingPage />} />
       <Route path="homepage" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="mystory" element={<MyStory />} />
