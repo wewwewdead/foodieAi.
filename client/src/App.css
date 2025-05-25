@@ -5,15 +5,14 @@
   padding: 0 auto;
   text-align: center;
 }
-
-h3 {
+h3{
   padding: 0;
   margin: 0;
 }
-.hide {
+.hide{
   display: none;
 }
-.navbar {
+.navbar{
   z-index: 100;
   position: fixed;
   display: flex;
@@ -27,73 +26,73 @@ h3 {
   align-items: center;
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.094);
 }
-.menu-bttn {
+.menu-bttn{
   display: none;
   margin-right: 1rem;
   height: fit-content;
   cursor: pointer;
 }
-.navlinks {
+.navlinks{
   width: 45%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
-.links {
+.links{
   font-weight: 660;
   font-size: 1.1rem;
   text-decoration: none;
   color: rgb(150 153 166);
 }
-.active-link {
+.active-link{
   font-weight: 660;
   font-size: 1.1rem;
   text-decoration: none;
   color: rgb(184 202 56);
 }
-.active-link:hover {
+.active-link:hover{
   color: rgb(184 202 56);
 }
-.links:hover {
+.links:hover{
   color: rgb(184 202 56);
 }
 
-.sign-up-bttn {
+.sign-up-bttn{
   display: block;
   background-color: rgb(184 202 56);
   color: #fcfeff;
-  padding: 0.6rem;
+  padding: .6rem;
   width: 90px;
   border-radius: 10px;
 }
-.sign-up-bttn:hover {
-  box-shadow: 1px 1px 1px rgba(36, 41, 0, 0.27);
-  color: #fcfeff;
+.sign-up-bttn:hover{
+  box-shadow: 1px 1px 1px rgba(36, 41, 0, 0.27);;
+  color: #fcfeff; 
 }
-.sign-up-bttn-mobile {
+.sign-up-bttn-mobile{
   display: none;
 }
 
-.logo-container {
+.logo-container{
   display: flex;
 }
-form {
+form{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.parent-container {
+.parent-container{
   height: fit-content;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.app-container {
+.app-container{
   position: relative;
   top: 93px;
   margin: 0rem 0 1rem 0;
-  display: flex;
+  display: flex;;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -101,10 +100,10 @@ form {
   height: 100%;
   background-color: #f3f3f390;
 }
-.form-container {
+.form-container{
   padding: 1rem 0rem 0rem 0rem;
 }
-.app-body-container {
+.app-body-container{
   display: flex;
   padding: 2rem 0;
   flex-direction: column;
@@ -119,7 +118,7 @@ form {
 .app-container p {
   padding: 0;
 }
-.analysis {
+.analysis{
   display: flex;
   height: fit-content;
   padding: 0rem 1rem 1rem 1rem;
@@ -128,15 +127,16 @@ form {
   text-align: left;
   white-space: pre-line;
 }
-.analysis h2 {
+.analysis h2{
   margin: 0;
   padding: 0;
 }
-.analysis-content {
+.analysis-content{
   display: flex;
   align-items: center;
+  
 }
-.analysis-column {
+.analysis-column{
   padding: 1rem;
   width: 30%;
   min-height: 200px;
@@ -147,13 +147,13 @@ form {
   margin: 0 0.5rem 0.5rem 0.5rem;
   color: rgb(49, 56, 3);
 }
-.benefits {
-  background-color: #add8e6;
+.benefits{
+  background-color: #ADD8E6;
 }
-.drawbacks {
-  background-color: #a9a9a9;
+.drawbacks{
+  background-color: #A9A9A9;
 }
-.camera-icon {
+.camera-icon{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,7 +162,7 @@ form {
   height: fit-content;
   cursor: pointer;
 }
-.join-now-container {
+.join-now-container{
   padding: 2rem 0;
   background-color: #ffffff;
   border-radius: 10px;
@@ -172,11 +172,11 @@ form {
   width: 100%;
   height: fit-content;
 }
-.be-a-member {
+.be-a-member{
   position: relative;
   display: flex;
 }
-.free-pop-up {
+.free-pop-up{
   position: absolute;
   color: rgb(255, 255, 255);
   background-color: rgba(255, 145, 28, 0.994);
@@ -189,36 +189,36 @@ form {
   margin: 0;
   border-radius: 20px;
 }
-.join-now-container h3 {
+.join-now-container h3{
   color: oklch(76.6626% 0.135433 153.450024 / 1);
 }
-.card-content {
+.card-content{
   display: flex;
   justify-content: center;
   gap: 1rem;
   width: 100%;
 }
-.img-preview {
+.img-preview{
   width: auto;
   height: 350px;
   border-radius: 10px;
   box-shadow: 2px 2px 2px rgba(34, 0, 0, 0.413);
 }
-.food-name {
+.food-name{
   font-weight: 800;
   font-size: 2.2rem;
 }
-.analyze-bttn {
+.analyze-bttn{
   background-color: rgb(184 202 56);
 }
-.login-page {
+.login-page{
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100vh;
 }
-.back-home {
+.back-home{
   display: flex;
   align-items: center;
   font-weight: 800;
@@ -226,7 +226,7 @@ form {
   align-self: flex-start;
   margin: 0rem 0rem 1rem 1rem;
 }
-.calorie-sugar-carbs {
+.calorie-sugar-carbs{
   color: rgb(19, 57, 0);
   display: flex;
   flex-direction: column;
@@ -234,31 +234,31 @@ form {
   height: fit-content;
   margin: 0 0 1rem 0;
 }
-.food-name {
-  font-size: 1.2rem;
+.food-name{
+  font-size:  1.2rem;
 }
-.kcal {
+.kcal{
   font-weight: 960;
   letter-spacing: 3px;
 }
-.save-food-bttn-container {
+.save-food-bttn-container{
   margin: 1rem 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.bttn-container {
+.bttn-container{
   display: flex;
   justify-content: center;
   gap: 4rem;
 }
-.save-bttn {
+.save-bttn{
   background-color: rgb(0, 97, 71);
   width: 100px;
   height: 40px;
   border-radius: 20px;
 }
-.cancel-bttn {
+.cancel-bttn{
   background-color: rgb(206, 65, 0);
   width: 100px;
   height: 40px;
@@ -287,14 +287,14 @@ form {
 .read-the-docs {
   color: #888;
 }
-.loading-container {
+.loading-container{
   height: auto;
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.food-data-parent {
+.food-data-parent{
   display: flex;
   flex-direction: column;
   width: 75%;
@@ -303,13 +303,9 @@ form {
   gap: 1rem;
   padding: 1rem 2rem;
   border-radius: 15px;
-  background: linear-gradient(
-    to bottom left,
-    rgb(184 202 56),
-    rgb(226, 244, 93)
-  );
+  background: linear-gradient(to bottom left, rgb(184 202 56), rgb(226, 244, 93));
 }
-.food-data-container {
+.food-data-container{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -317,42 +313,43 @@ form {
   background-color: #fcfff8;
   border-radius: 15px;
 }
-.date-food {
+.date-food{
   font-size: 0.7rem;
   font-weight: 850;
   color: #7d7d7d;
 }
-.food-data-children {
+.food-data-children{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
   text-align: left;
 }
-.totals {
+.totals{
   display: flex;
   flex-direction: column;
   text-align: left;
   gap: 1rem;
 }
-.total-calories {
+.total-calories{
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
   width: 100%;
+
 }
-.total-calories p {
+.total-calories p{
   font-weight: 680;
   font-size: 0.8rem;
 }
-.total-sugar-carbs {
+.total-sugar-carbs{
   font-weight: 680;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
-.date-today {
+.date-today{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -361,7 +358,7 @@ form {
   color: #ffffff;
   font-weight: 680;
 }
-.reminder {
+.reminder{
   background-color: #ff911cfd;
   padding: 0.2rem;
   border-radius: 10px;
@@ -372,49 +369,49 @@ form {
   font-weight: 450;
   font-size: 0.7rem;
 }
-.bubble-message {
+.bubble-message{
   width: 50%;
   padding: 1rem 0rem;
 }
-.message-container {
+.message-container{
   background-color: rgb(184 202 56);
   padding: 0.5rem;
   border-radius: 20px 20px 20px 0;
 }
-@media (max-width: 450px) {
-  .menu-bttn {
+@media (max-width: 450px){
+  .menu-bttn{
     display: flex;
     margin-right: 1rem;
     height: fit-content;
     cursor: pointer;
   }
-  .analysis-content {
+  .analysis-content{
     flex-direction: column;
   }
-  .food-name {
+  .food-name{
     font-size: 1.5rem;
   }
-  .analysis-column {
+  .analysis-column{
     font-size: 0.9rem;
     width: 90%;
   }
-  .links {
+  .links{
     font-weight: 660;
     font-size: 0.9rem;
     text-decoration: none;
     color: rgb(1, 1, 0);
   }
-  .active-link {
+  .active-link{
     font-weight: 660;
     font-size: 1.1rem;
     text-decoration: none;
     color: rgb(172, 195, 0);
   }
 
-  .navlinks {
+  .navlinks{
     display: none;
   }
-  .sidebar {
+  .sidebar{
     z-index: 101;
     gap: 1rem;
     position: fixed;
@@ -430,20 +427,20 @@ form {
     left: 50%;
     top: 93px;
   }
-  .img-preview {
+  .img-preview{
     width: auto;
     height: 150px;
     border-radius: 10px;
     box-shadow: 2px 2px 2px rgba(34, 0, 0, 0.413);
   }
-  .card-content {
+  .card-content{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     width: 100%;
   }
-  .free-pop-up {
+  .free-pop-up{
     position: absolute;
     color: rgb(255, 255, 255);
     background-color: rgba(255, 145, 28, 0.994);
@@ -457,23 +454,23 @@ form {
     margin: 0;
     border-radius: 20px;
   }
-  .sign-up-bttn-mobile {
+  .sign-up-bttn-mobile{
     width: fit-content;
     display: block;
     background-color: rgb(184 202 56);
     color: #fcfeff;
-    padding: 0.6rem;
+    padding: .6rem;
     border-radius: 10px;
     font-size: 0.8rem;
   }
-  .sign-up-bttn {
+  .sign-up-bttn{
     font-size: 0.8rem;
     display: none;
   }
-  .date-today {
+  .date-today{
     width: 100%;
   }
-  .reminder {
+  .reminder{
     top: 10px;
     font-size: 0.4rem;
   }
