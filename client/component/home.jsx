@@ -9,7 +9,7 @@ import supabase from "../client/supabase.js";
 import Modal from 'react-modal';
 
 
-const FeedPage = ()=> {
+const HomePage = ()=> {
     const [file, setFile] = useState(null);
     const [analysis, setAnalysis] = useState('');
     const [foodCoach, setFoodCoach] = useState('');
@@ -445,4 +445,4 @@ const FeedPage = ()=> {
     )
 }
 
-export default FeedPage;
+export default HomePage;
