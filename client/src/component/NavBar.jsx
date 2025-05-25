@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useCallback, useRef, act, use } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import foodielogo from "../src/assets/foodie.png";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import foodielogo from "../assets/foodie.png";
 import supabase from "../client/supabase";
 
 const PUBLIC_URL = [
   { path: "/homepage", label: "Home" },
   { path: "/mystory", label: "My Story" },
   { path: "/about", label: "About" },
-  { path: "/learnabout", label: "Education" },
+  { path: "/education", label: "Education" },
 ];
 
 const AUTH_URL = [
@@ -19,17 +19,19 @@ const AUTH_URL = [
 const Navbar = () => {
   const navigate = useNavigate();
   const [showSidebar, setShowSidebar] = useState(false);
-  const [loggedInText, setLoggedInText] = useState('');
+  const [loggedInText, setLoggedInText] = useState("");
   const [session, setSession] = useState(null);
 
   const fetchUser = async () => {
-    const {data: {session}} = await supabase.auth.getSession();
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
     if (session) {
-      setLoggedInText('Log out')
+      setLoggedInText("Log out");
       setSession(session);
       // console.log(session)
     } else {
-      setLoggedInText('Join FoodieAi.')
+      setLoggedInText("Join FoodieAi.");
     }
   };
 
@@ -47,16 +49,16 @@ const Navbar = () => {
     setShowSidebar(!showSidebar);
   };
 
-  const handleLogin = async(e) => {
+  const handleLogin = async (e) => {
     e.stopPropagation();
-    navigate('/login')
+    navigate("/login");
   };
-  const handleLogout = async(e) =>{
+  const handleLogout = async (e) => {
     e.stopPropagation();
     await supabase.auth.signOut();
-    setSession(null)
-    navigate('/login')
-  }
+    setSession(null);
+    navigate("/login");
+  };
 
   useEffect(() => {
     fetchUser();
@@ -84,17 +86,15 @@ const Navbar = () => {
           {navLinks.map(({ path, label }) => (
             <Link
               key={path}
-              className={
-                location.pathname === path ? "active-link" : "links"
-              }
+              className={location.pathname === path ? "active-link" : "links"}
               to={path}
             >
               {label}
             </Link>
           ))}
-          <button 
-          className="sign-up-bttn"
-          onClick={session ? (e) => handleLogout(e) : (e) => handleLogin(e)}
+          <button
+            className="sign-up-bttn"
+            onClick={session ? (e) => handleLogout(e) : (e) => handleLogin(e)}
           >
             {loggedInText}
           </button>
@@ -141,13 +141,12 @@ const Navbar = () => {
           </Link>
         ))}
 
-          <button
-            onClick={session ? (e) => handleLogout(e) : (e) => handleLogin(e)}
-            className="sign-up-bttn-mobile"
-          >
-            {loggedInText}
-          </button>
-
+        <button
+          onClick={session ? (e) => handleLogout(e) : (e) => handleLogin(e)}
+          className="sign-up-bttn-mobile"
+        >
+          {loggedInText}
+        </button>
       </motion.div>
     </>
   );
