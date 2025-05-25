@@ -1,30 +1,25 @@
-import { useState, useEffect } from 'react'
-import { Routes, Route, BrowserRouter} from 'react-router-dom'
-import './App.css'
-import './landingPage.css'
-import FeedPage from '../component/home'
-import LandingPage from '../component/landingpage'
-import About from '../component/about'
-import MyStory from '../component/mystory'
-import Login from '../component/login'
-import AboutFood from '../component/education'
-import DailyTracker from '../component/dailytracker'
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import About from "./component/About";
+import DailyTracker from "./component/DailyTracker";
+import Education from "./component/Education";
+import Home from "./component/Home";
+import LandingPage from "./component/LandingPage";
+import Login from "./component/Login";
+import MyStory from "./component/MyStory";
+import "./landingPage.css";
 
 function App() {
-
-
   return (
     <Routes>
-        <Route path='/landingpage' element={<LandingPage/>}/>
-        <Route path='/' element={<FeedPage/>}/>
-        <Route path='homepage' element={<FeedPage/>}/>
-        <Route path='about' element={<About/>}/>
-        <Route path='mystory' element={<MyStory/>}/>
-        <Route path='learnabout' element={<AboutFood/>}/>
-        <Route path='login' element={<Login/>}/>
-        <Route path='dailytracker' element={<DailyTracker/>}/>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="homepage" element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="mystory" element={<MyStory />} />
+      <Route path="education" element={<Education />} />
+      <Route path="login" element={<Login />} />
+      <Route path="dailytracker" element={<DailyTracker />} />
     </Routes>
-      
-  )
+  );
 }
-export default App
+export default App;
