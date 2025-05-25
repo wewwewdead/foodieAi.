@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import { uploadFood, saveData } from "../services/api";
-import Navbar from "./NavBar.jsx";
-import Footer from "./Footer.jsx";
-import { ClipLoader } from "react-spinners";
-import { motion, AnimatePresence } from "framer-motion";
-import supabase from "../client/supabase.js";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import Modal from "react-modal";
+import { useNavigate } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
+import supabase from "../client/supabase.js";
+import { saveData, uploadFood } from "../services/api.js";
 
 const HomePage = () => {
   const [file, setFile] = useState(null);
@@ -268,7 +266,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="parent-container">
         <div className="app-container">
           <div className="app-body-container night-mode">
@@ -597,7 +595,7 @@ const HomePage = () => {
             <h3>Food was saved in your daily tracker succesfully</h3>
             <button onClick={() => setShowModal(false)}>Close</button>
           </Modal>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     </>
