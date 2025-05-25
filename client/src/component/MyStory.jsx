@@ -1,4 +1,4 @@
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Fb from "../assets/Facebook_Logo_Primary.png";
