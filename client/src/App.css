@@ -19,9 +19,9 @@ h3 {
   background-color: #ffffff5c;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  width: 100%;
+  width: 97%;
   padding: 1rem;
-  height: 4rem;
+  height: 60px;
   justify-content: space-between;
   align-items: center;
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.094);
@@ -82,14 +82,13 @@ form {
   flex-direction: column;
   align-items: center;
 }
-/* .parent-container {
+.parent-container {
   height: fit-content;
   display: flex;
   align-items: center;
   flex-direction: column;
-} */
-
-/* .app-container {
+}
+.app-container {
   position: relative;
   top: 93px;
   margin: 0rem 0 1rem 0;
@@ -100,21 +99,23 @@ form {
   width: 100%;
   height: 100%;
   background-color: #f3f3f390;
-} */
-/* .form-container {
+}
+.form-container {
   padding: 1rem 0rem 0rem 0rem;
-} */
-/* .app-body-container {
+}
+.app-body-container {
   display: flex;
   padding: 2rem 0;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(to right, #fbefff, #eaf6ff);
+  /* background-color: red; */
   background-size: cover;
   width: 100%;
   height: 100vh;
+  /* height: fit-content; */
   border-radius: 10px;
-} */
+}
 
 .app-container p {
   padding: 0;
@@ -127,9 +128,6 @@ form {
   align-items: center;
   text-align: left;
   white-space: pre-line;
-
-  /* NOTE: TEMP */
-  display: none;
 }
 .analysis h2 {
   margin: 0;
@@ -487,18 +485,4 @@ form {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-.home {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
 }
