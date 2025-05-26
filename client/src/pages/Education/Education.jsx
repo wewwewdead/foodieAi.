@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import "../education.css";
-import Footer from "./Footer";
-import Navbar from "./NavBar";
+import Footer from "../../component/Footer";
+import Navbar from "../../component/NavBar";
+import "../../education.css";
 
 const Education = () => {
   useEffect(() => {

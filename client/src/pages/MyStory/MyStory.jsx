@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Fb from "../assets/Facebook_Logo_Primary.png";
+import Fb from "../../assets/Facebook_Logo_Primary.png";
 
-import Ig from "../assets/Instagram_Glyph_Gradient.png";
-import Twitter from "../assets/logo-black.png";
-import MyProfile from "../assets/profileFb.jpg";
-import "../mystory.css";
-import Footer from "./Footer";
-import Navbar from "./NavBar";
+import Ig from "../../assets/Instagram_Glyph_Gradient.png";
+import Twitter from "../../assets/logo-black.png";
+import MyProfile from "../../assets/profileFb.jpg";
+import Footer from "../../component/Footer";
+import Navbar from "../../component/NavBar";
+import "../../mystory.css";
 
 const MyStory = () => {
   useEffect(() => {
