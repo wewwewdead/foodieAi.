@@ -1,0 +1,14 @@
+/* TODO - use responsive text, dimenions, implement BEM*/
+.saved-meal-modal {
+  width: 60%;
+  height: 100px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 10000;
+}
+
+.saved-meal-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}

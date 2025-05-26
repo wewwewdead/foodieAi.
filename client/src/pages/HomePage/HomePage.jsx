@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import benefits from "../../assets/benefits.svg";
@@ -8,6 +7,7 @@ import drawbacks from "../../assets/drawbacks.svg";
 import nutrients from "../../assets/nutrients.svg";
 import uploadCamera from "../../assets/upload.svg";
 import supabase from "../../client/supabase.js";
+import SavedMealModal from "../../component/SavedMeal/SavedMealModal.jsx";
 import { saveData, uploadFood } from "../../services/api.js";
 import "./home.css";
 
@@ -516,28 +516,11 @@ const HomePage = () => {
         </div>
       </div>
 
-      <Modal
+      {/* NOTE: SAVED Meal Modal */}
+      <SavedMealModal
         isOpen={showModal}
         onRequestClose={() => setShowModal(false)}
-        contentLabel="food data Uploaded Modal"
-        style={{
-          overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-          },
-          content: {
-            width: "60%",
-            height: "100px",
-            zIndex: "10000",
-            margin: "auto",
-            padding: "20px",
-            borderRadius: "8px",
-            textAlign: "center",
-          },
-        }}
-      >
-        <h3>Food was saved in your daily tracker succesfully</h3>
-        <button onClick={() => setShowModal(false)}>Close</button>
-      </Modal>
+      />
     </>
   );
 };
