@@ -5,10 +5,10 @@ import { ClipLoader } from "react-spinners";
 import benefits from "../../assets/benefits.svg";
 import drawbacks from "../../assets/drawbacks.svg";
 import nutrients from "../../assets/nutrients.svg";
-import uploadCamera from "../../assets/upload.svg";
 import supabase from "../../client/supabase.js";
 import SavedMealModal from "../../component/SavedMeal/SavedMealModal.jsx";
 import { saveData, uploadFood } from "../../services/api.js";
+import FoodUploadForm from "../../component/UploadForm/FoodUploadForm.jsx";
 import "./home.css";
 
 const HomePage = () => {
@@ -89,9 +89,7 @@ const HomePage = () => {
   const handleClickUpload = (e) => {
     e.preventDefault();
     if (fileRef.current) {
-      setFile(null);
       setErrorMessage("");
-      setImagePreview("");
       setAnalysis("");
       setFoodCoach("");
       setNoFood("");
@@ -103,18 +101,15 @@ const HomePage = () => {
 
   const handleImageChange = (e) => {
     e.preventDefault();
-    const file = e.target.files[0];
-    setFile(file);
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      setFile(selectedFile);
 
-    if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
         setImagePreview(reader.result);
       };
-
-      reader.readAsDataURL(file);
-    } else {
-      setImagePreview("");
+      reader.readAsDataURL(selectedFile);
     }
   };
 
@@ -151,6 +146,7 @@ const HomePage = () => {
     setBenefitsCurrentIndex(0);
     setDrawBacksCurrentIndex(0);
     const formData = new FormData();
+
     if (!file) {
       setErrorMessage("Please upload a photo of your food!");
       setSwitchButton(false);
@@ -272,49 +268,19 @@ const HomePage = () => {
   return (
     <>
       <div className="home night-mode">
-        <form onSubmit={handleSubmit} className="home__form-container">
-          <input
-            ref={fileRef}
-            style={{ display: "none" }}
-            onChange={handleImageChange}
-            type="file"
-            accept="image/*"
-            id="imageInput"
-          />
+        <h2 className="home__welcome">{welcomeMessage}</h2>
 
-          <div onClick={handleClickUpload} className="form__upload">
-            <p>Meal Snap!</p>
-            <img src={uploadCamera} alt="" className="form__cam" />
-          </div>
-
-          <div className="img-preview-container">
-            {imagePreview && (
-              <img
-                className="img-preview"
-                src={imagePreview}
-                alt="Image preview"
-              />
-            )}
-          </div>
-          {switchButton ? (
-            <button disabled={analyzing} onClick={newPhoto}>
-              {analyzing ? "Analyzing..." : "Analyze new food"}
-            </button>
-          ) : (
-            <button
-              disabled={analyzing}
-              className="form__analyze"
-              type="submit"
-            >
-              {analyzing ? "Analyzing..." : "Analyze"}
-            </button>
-          )}
-
-          {noFood && (
-            <h2 style={{ color: "rgb(255, 39, 39)" }}>No food detected!</h2>
-          )}
-          <h2>{welcomeMessage}</h2>
-        </form>
+        <FoodUploadForm
+          imagePreview={imagePreview}
+          handleClickUpload={handleClickUpload}
+          handleImageChange={handleImageChange}
+          handleSubmit={handleSubmit}
+          switchButton={switchButton}
+          analyzing={analyzing}
+          newPhoto={newPhoto}
+          noFood={noFood}
+          fileRef={fileRef}
+        />
 
         <div className="analysis">
           <div className="loading-container">
