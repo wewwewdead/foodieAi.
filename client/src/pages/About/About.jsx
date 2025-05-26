@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import "../about.css";
-import Footer from "./Footer";
-import Navbar from "./NavBar";
+import "../../about.css";
+import Footer from "../../component/Footer";
+import Navbar from "../../component/NavBar";
 
 const About = () => {
   useEffect(() => {

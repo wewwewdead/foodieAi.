@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
-import supabase from "../client/supabase.js";
-import { saveData, uploadFood } from "../services/api.js";
+import supabase from "../../client/supabase.js";
+import { saveData, uploadFood } from "../../services/api.js";
 
 const HomePage = () => {
   const [file, setFile] = useState(null);

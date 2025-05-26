@@ -6,28 +6,26 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./App.css";
-import About from "./component/About";
 import DailyTracker from "./component/DailyTracker";
-import Education from "./component/Education";
-import HomePage from "./component/HomePage";
 import LandingPage from "./component/LandingPage";
 import Layout from "./component/Layout";
 import Login from "./component/Login";
 import MinimalLayout from "./component/MinimalLayout";
-import MyStory from "./component/MyStory";
+import About from "./pages/About/About";
+import Education from "./pages/Education/Education";
+import HomePage from "./pages/HomePage/HomePage";
+import MyStory from "./pages/MyStory/MyStory";
 
 import "./landingPage.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      {/* Routes without Navbar and Footer */}
       <Route element={<MinimalLayout />}>
         <Route path="/" element={<Navigate to="/landingpage" replace />} />
         <Route path="/landingpage" element={<LandingPage />} />
       </Route>
 
-      {/* Routes with Navbar and Footer */}
       <Route element={<Layout />}>
         <Route path="/homepage" element={<HomePage />} />
         <Route path="/about" element={<About />} />
