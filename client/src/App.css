@@ -429,14 +429,16 @@ h3 {
 
 /* NOTE: LAYOUT */
 .site-wrapper {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f8fffc, #fff9f1);
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%);
+.site-wrapper main {
+  flex: 1;
+}
+
+.site-wrapper {
+  justify-content: space-between;
 }

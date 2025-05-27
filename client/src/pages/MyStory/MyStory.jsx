@@ -63,17 +63,17 @@ const MyStory = () => {
           </div>
         </article>
 
-        <aside className="my-profile" aria-label="About the founder">
+        <aside className="mystory__profile" aria-label="About the founder">
           <figure>
             <img
               loading="lazy"
-              className="my-profile-img"
+              className="mystory__profile-image"
               src={MyProfile}
               alt="Portrait of Loren, founder of FoodieAI"
             />
             <figcaption className="mystory__name">
               <h2>Hi! It's Loren</h2>
-              <span className="founder">(Founder of FoodieAI)</span>
+              <p className="founder">(Founder of FoodieAI)</p>
             </figcaption>
           </figure>
 
