@@ -141,12 +141,7 @@ h3 {
 .join-now-container h3 {
   color: oklch(76.6626% 0.135433 153.450024 / 1);
 }
-.card-content {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  width: 100%;
-}
+
 .img-preview {
   width: auto;
   height: 350px;
@@ -225,10 +220,6 @@ h3 {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
-  padding: 2em;
 }
 
 .read-the-docs {
