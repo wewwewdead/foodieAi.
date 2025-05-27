@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import Footer from "../../component/Footer";
-import Navbar from "../../component/NavBar";
 import "../../education.css";
 
 const Education = () => {
@@ -9,7 +7,6 @@ const Education = () => {
   }, []);
   return (
     <>
-      <Navbar />
       <div className="parent-container">
         <div className="app-container">
           <div className="app-body-container">
@@ -61,7 +58,6 @@ const Education = () => {
                 </p>
               </div>
             </div>
-            <Footer />
           </div>
         </div>
       </div>

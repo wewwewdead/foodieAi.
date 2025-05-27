@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.founder {
+  font-size: 1.25rem;
+  color: hsl(var(--clr-dark-900) / 0.7);
+}
+
+.mystory {
+  padding: 10rem 0rem 0rem 0rem;
+  min-height: 100vh;
+  background: linear-gradient(to right, #fdfffe, #fffcf8);
+  display: flex;
+  justify-content: center;
+}
+
+.mystory__name {
+  text-align: left;
+}
+
+.my-profile-img {
+  border-radius: 15px;
+  width: 100%;
+  height: auto;
+}
+
+.socmed-icons {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.mystory__socmedia-links {
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+}
+
+.my-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mystory__article {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.mystory__container {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 6rem;
+}
+
+.mystory__description {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mystory span {
+  font-weight: 600;
+}
+
+blockquote {
+  position: relative;
+  line-height: 1.6;
+  color: #333;
+  border-radius: 0 4px 4px 0;
+}
+
+.mystory__quote {
+  font-style: italic;
+  font-size: 1.5rem;
+  color: hsl(var(--clr-dark-900) / 0.5);
+  font-weight: 600;
+}
+
+.mystory__quote em {
+  font-weight: 700;
+  color: #4caf50;
+}
+
+blockquote::before {
+  height: fit-content;
+  content: open-quote;
+  line-height: 1;
+  font-size: 7rem;
+  color: #4caf50;
+  opacity: 0.3;
+  position: absolute;
+  left: -3rem;
+  top: -1rem;
+}
+
+blockquote::after {
+  right: 0;
+  bottom: -4rem;
+  content: close-quote;
+  font-size: 6rem;
+  line-height: 1;
+  color: #4caf50;
+  opacity: 0.3;
+  position: absolute;
+}
+
+.mystory__article section:first-of-type,
+.mystory__article section:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

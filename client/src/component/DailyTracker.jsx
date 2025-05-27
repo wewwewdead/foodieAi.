@@ -6,7 +6,7 @@ import supabase from "../client/supabase";
 import "../education.css";
 import { fetchFoodLogs } from "../services/api";
 import Footer from "./Footer";
-import Navbar from "./NavBar";
+import Navbar from "./NavBar/NavBar";
 
 const DailyTracker = () => {
   const [data, setData] = useState([]);

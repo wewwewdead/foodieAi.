@@ -1,0 +1,22 @@
+.navbar {
+  z-index: 100;
+  position: fixed;
+  display: flex;
+  background-color: #ffffff5c;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
+  padding: 2rem 10rem;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.094);
+}
+
+.navlinks {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 2rem;
+}

@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import foodielogo from "../assets/foodie.png";
-import supabase from "../client/supabase";
+import foodielogo from "../../assets/foodie.png";
+import supabase from "../../client/supabase";
+import "./navBar.css";
 
 const PUBLIC_URL = [
   { path: "/homepage", label: "Home" },
@@ -82,6 +83,7 @@ const Navbar = () => {
           </p>
         </div>
 
+        {/*  */}
         <div className="navlinks">
           {navLinks.map(({ path, label }) => (
             <Link

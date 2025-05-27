@@ -70,7 +70,8 @@
 .form__upload--image {
   background-size: cover;
   background-position: center;
-  box-shadow: 0 0.5rem 0.5rem 0rem rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .form__upload-overlay {
