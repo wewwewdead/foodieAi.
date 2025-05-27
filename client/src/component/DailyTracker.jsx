@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import supabase from "../client/supabase";
-import "../education.css";
 import { fetchFoodLogs } from "../services/api";
 import Footer from "./Footer";
 import Navbar from "./NavBar/NavBar";

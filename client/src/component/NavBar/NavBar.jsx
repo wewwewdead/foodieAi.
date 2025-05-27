@@ -72,12 +72,7 @@ const Navbar = () => {
     <>
       <div className="navbar">
         <div className="logo-container">
-          <img
-            onClick={clickLogo}
-            className="foodie-logo"
-            src={foodielogo}
-            alt=""
-          />
+          <img onClick={clickLogo} className="logo" src={foodielogo} alt="" />
           <p onClick={clickLogo} className="foodie">
             Foodie AI.
           </p>

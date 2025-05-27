@@ -59,23 +59,6 @@ h3 {
   display: flex;
 }
 
-.app-body-container {
-  display: flex;
-  padding: 2rem 0;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(to right, #fbefff, #eaf6ff);
-  /* background-color: red; */
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  /* height: fit-content; */
-  border-radius: 10px;
-}
-
-.app-container p {
-  padding: 0;
-}
 .analysis {
   display: flex;
   height: fit-content;

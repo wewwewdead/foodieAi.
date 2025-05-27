@@ -7,16 +7,14 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import DailyTracker from "./component/DailyTracker";
-import LandingPage from "./component/LandingPage";
 import Layout from "./component/Layout";
-import Login from "./component/Login";
 import MinimalLayout from "./component/MinimalLayout";
 import About from "./pages/About/About";
 import Education from "./pages/Education/Education";
 import HomePage from "./pages/HomePage/HomePage";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import Login from "./pages/Login/Login";
 import MyStory from "./pages/MyStory/MyStory";
-
-import "./landingPage.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

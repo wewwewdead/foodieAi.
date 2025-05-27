@@ -1,0 +1,40 @@
+.login {
+  padding: 10rem 0;
+  width: 88%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  font-weight: 600;
+  color: hsl(var(--clr-dark-900) / 0.9);
+}
+
+.benefits__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.signin {
+  display: flex;
+  justify-content: center;
+}
+.member__title {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.member__benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.free {
+  padding: 0.125rem 1rem;
+  background-color: olivedrab;
+  border-radius: 2rem;
+  align-items: center;
+  color: white;
+}
