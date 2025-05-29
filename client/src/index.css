@@ -1,9 +1,9 @@
+/* NOTE: RESET */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Sniglet:wght@400;800&display=swap");
+
 :root {
   --clr-dark-900: 41 1% 13%; /*#212120*/
 }
-
-/* NOTE: RESET */
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Sniglet:wght@400;800&display=swap");
 
 *,
 *::before,

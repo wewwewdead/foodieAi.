@@ -13,13 +13,6 @@ h3 {
   display: none;
 }
 
-.menu-bttn {
-  display: none;
-  margin-right: 1rem;
-  height: fit-content;
-  cursor: pointer;
-}
-
 .links {
   font-weight: 660;
   font-size: 1.1rem;
@@ -39,18 +32,6 @@ h3 {
   color: rgb(184 202 56);
 }
 
-.sign-up-bttn {
-  display: block;
-  background-color: rgb(184 202 56);
-  color: #fcfeff;
-  padding: 0.6rem;
-  width: 90px;
-  border-radius: 10px;
-}
-.sign-up-bttn:hover {
-  box-shadow: 1px 1px 1px rgba(36, 41, 0, 0.27);
-  color: #fcfeff;
-}
 .sign-up-bttn-mobile {
   display: none;
 }
@@ -318,19 +299,6 @@ h3 {
   .analysis-column {
     font-size: 0.9rem;
     width: 90%;
-  }
-  .links {
-    font-weight: 660;
-    font-size: 0.9rem;
-    text-decoration: none;
-    color: rgb(1, 1, 0);
-  }
-
-  .active-link {
-    font-weight: 660;
-    font-size: 1.1rem;
-    text-decoration: none;
-    color: rgb(172, 195, 0);
   }
 
   .navlinks {
