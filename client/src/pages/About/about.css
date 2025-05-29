@@ -1,5 +1,5 @@
 .about {
-  padding: 10rem 0;
+  padding: 7rem 0;
   width: 88%;
   display: flex;
   flex-direction: column;
@@ -14,8 +14,22 @@
   gap: 2rem;
 }
 
+@media (max-width: 75em) {
+  .about__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 48em) {
+  .about__content {
+    grid-template-columns: 1fr;
+  }
+}
+
 .about__title-name {
   font-size: 4rem;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 800;
 }
 
 .about__title-description {

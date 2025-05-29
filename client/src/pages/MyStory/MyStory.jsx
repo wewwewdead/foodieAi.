@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Fb from "../../assets/Facebook_Logo_Primary.png";
 import Ig from "../../assets/Instagram_Glyph_Gradient.png";
@@ -8,14 +7,15 @@ import MyProfile from "../../assets/profileFb.jpg";
 import "./mystory.css";
 
 const MyStory = () => {
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, []);
-
   return (
     <div className="mystory">
       <div className="mystory__container">
-        <article className="mystory__article">
+        <motion.article
+          className="mystory__article"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
           <blockquote>
             <p className="mystory__quote">
               It all started when I went grocery shopping one day. I was
@@ -61,19 +61,28 @@ const MyStory = () => {
               </p>
             </section>
           </div>
-        </article>
+        </motion.article>
 
-        <aside className="mystory__profile" aria-label="About the founder">
+        <motion.aside
+          className="mystory__profile"
+          aria-label="About the founder"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
           <figure>
-            <img
+            <motion.img
               loading="lazy"
               className="mystory__profile-image"
               src={MyProfile}
               alt="Portrait of Loren, founder of FoodieAI"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
             />
             <figcaption className="mystory__name">
               <h2>Hi! It's Loren</h2>
-              <p className="founder">(Founder of FoodieAI)</p>
+              <p className="founder">(Founder)</p>
             </figcaption>
           </figure>
 
@@ -86,10 +95,13 @@ const MyStory = () => {
                 >
                   <motion.img
                     loading="lazy"
-                    whileHover={{ scale: 1.5 }}
+                    whileHover={{ scale: 1.2 }}
                     className="socmed-icons"
                     src={Ig}
                     alt="Instagram logo"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3 }}
                   />
                 </Link>
               </li>
@@ -100,10 +112,13 @@ const MyStory = () => {
                 >
                   <motion.img
                     loading="lazy"
-                    whileHover={{ scale: 1.5 }}
+                    whileHover={{ scale: 1.2 }}
                     className="socmed-icons"
                     src={Fb}
                     alt="Facebook logo"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3 }}
                   />
                 </Link>
               </li>
@@ -111,16 +126,19 @@ const MyStory = () => {
                 <Link to={"https://x.com/LorenJohnmathew"} aria-label="Twitter">
                   <motion.img
                     loading="lazy"
-                    whileHover={{ scale: 1.5 }}
+                    whileHover={{ scale: 1.2 }}
                     className="socmed-icons"
                     src={Twitter}
                     alt="Twitter logo"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3 }}
                   />
                 </Link>
               </li>
             </ul>
           </nav>
-        </aside>
+        </motion.aside>
       </div>
     </div>
   );

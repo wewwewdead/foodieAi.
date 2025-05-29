@@ -1,18 +1,25 @@
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 import "./education.css";
 
 const Education = () => {
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, []);
   return (
     <div className="education">
-      <div className="education__title">
+      <motion.div
+        className="education__title"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
         <h1 className="education__title-name">Education mode</h1>
         <p className="education__title-description">Fun facts about foods!</p>
-      </div>
+      </motion.div>
 
-      <div className="education__content">
+      <motion.div
+        className="education__content"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", stiffness: 110, damping: 12 }}
+      >
         <div className="card">
           <h2>Why fiber is important</h2>
           <p className="text">
@@ -28,6 +35,7 @@ const Education = () => {
             blood pressure, lowering heart disease risk.
           </p>
         </div>
+
         <div className="card">
           <h2>Carbs</h2>
           <p className="text">
@@ -43,6 +51,7 @@ const Education = () => {
             increase risks of diabetes and heart disease.
           </p>
         </div>
+
         <div className="card">
           <h2>How sugar affects body</h2>
           <p className="text">
@@ -54,8 +63,9 @@ const Education = () => {
             function and mental health over time.
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
+
 export default Education;

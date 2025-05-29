@@ -151,7 +151,7 @@
   z-index: 101;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .navlinks {
     display: none;
   }
@@ -164,7 +164,7 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 48em) {
   .navlinks {
     display: flex;
   }

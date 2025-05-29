@@ -26,47 +26,26 @@ const Login = () => {
     }
   }, [navigate, session]);
 
-  // const handleHome = (e) => {
-  //   e.stopPropagation();
-  //   navigate("/homepage");
-  // };
-
   return (
     <div className="login">
       <div className="member__benefits">
-        {/* <div onClick={handleHome} className="back-home">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#000000"
-          >
-            <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
-          </svg>
-          Home
-        </div> */}
+        <motion.div
+          className="member__title-wrapper"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <h1 className="member__title-name">Become a member!</h1>
+          <span className="free">free!</span>
+        </motion.div>
 
-        <div className="member__title">
-          <h1 className="member__title-name">Become a member now!</h1>
-
-          <motion.div
-            animate={{
-              y: [0, -8, 0, -4, 1, 0],
-              transition: {
-                duration: 2,
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "easeInOut",
-              },
-            }}
-          >
-            <p className="free">for free!</p>
-          </motion.div>
-        </div>
-
-        <div className="signin">
-          <div style={{ width: "50%" }}>
+        <motion.div
+          className="signin member__title"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div style={{ transform: "translateX(-1rem)" }}>
             <Auth
               supabaseClient={supabase}
               appearance={{ theme: ThemeSupa }}
@@ -74,9 +53,14 @@ const Login = () => {
               onlyThirdPartyProviders
             />
           </div>
-        </div>
+        </motion.div>
 
-        <div className="benefits__content">
+        <motion.div
+          className="benefits__content"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 110, damping: 12 }}
+        >
           <div className="card">
             <h2>Daily tracker:</h2>
             <p>track your</p>
@@ -132,7 +116,7 @@ const Login = () => {
               badge if it fits your goal.
             </p>
             <p>
-              Warn{" "}
+              Warn
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="20px"
@@ -141,7 +125,7 @@ const Login = () => {
                 fill="#000000"
               >
                 <path d="M330-120 120-330v-300l210-210h300l210 210v300L630-120H330Zm36-190 114-114 114 114 56-56-114-114 114-114-56-56-114 114-114-114-56 56 114 114-114 114 56 56Zm-2 110h232l164-164v-232L596-760H364L200-596v232l164 164Zm116-280Z" />
-              </svg>{" "}
+              </svg>
               if the food is risky (e.g., "too much sugar for diabetic goal").
             </p>
           </div>
@@ -162,9 +146,10 @@ const Login = () => {
               sugar] and [your total carbs].
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 };
+
 export default Login;

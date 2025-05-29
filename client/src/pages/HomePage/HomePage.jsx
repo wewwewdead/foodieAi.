@@ -7,8 +7,8 @@ import drawbacks from "../../assets/drawbacks.svg";
 import nutrients from "../../assets/nutrients.svg";
 import supabase from "../../client/supabase.js";
 import SavedMealModal from "../../component/SavedMeal/SavedMealModal.jsx";
-import { saveData, uploadFood } from "../../services/api.js";
 import FoodUploadForm from "../../component/UploadForm/FoodUploadForm.jsx";
+import { saveData, uploadFood } from "../../services/api.js";
 import "./home.css";
 
 const HomePage = () => {
@@ -268,7 +268,14 @@ const HomePage = () => {
   return (
     <>
       <div className="home night-mode">
-        <h2 className="home__welcome">{welcomeMessage}</h2>
+        <motion.h2
+          className="home__welcome"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {welcomeMessage}
+        </motion.h2>
 
         <FoodUploadForm
           imagePreview={imagePreview}

@@ -14,7 +14,13 @@ const FoodUploadForm = ({
   fileRef,
 }) => {
   return (
-    <form onSubmit={handleSubmit} className="form__container">
+    <motion.form
+      onSubmit={handleSubmit}
+      className="form__container"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 110, damping: 12 }}
+    >
       <input
         ref={fileRef}
         style={{ display: "none" }}
@@ -72,7 +78,7 @@ const FoodUploadForm = ({
       {noFood && (
         <h2 style={{ color: "rgb(255, 39, 39)" }}>No food detected!</h2>
       )}
-    </form>
+    </motion.form>
   );
 };
 
