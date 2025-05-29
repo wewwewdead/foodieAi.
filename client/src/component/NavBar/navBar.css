@@ -152,6 +152,9 @@
 }
 
 @media (max-width: 48em) {
+  .sidebar {
+    width: 12.5rem;
+  }
   .navlinks {
     display: none;
   }

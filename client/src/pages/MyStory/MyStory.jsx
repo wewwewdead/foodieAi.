@@ -10,6 +10,89 @@ const MyStory = () => {
   return (
     <div className="mystory">
       <div className="mystory__container">
+        <motion.aside
+          className="mystory__profile"
+          aria-label="About the founder"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <figure>
+            <motion.img
+              loading="lazy"
+              className="mystory__profile-image"
+              src={MyProfile}
+              alt="Portrait of Loren, founder of FoodieAI"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            />
+
+            <div className="mystory__profile-content">
+              <figcaption className="mystory__name">
+                <h2>Hi! It's Loren</h2>
+                <p className="founder">(Founder)</p>
+              </figcaption>
+
+              <nav aria-label="Social media links">
+                <ul className="mystory__socmedia-links">
+                  <li>
+                    <Link
+                      to={"https://www.instagram.com/johnmathewloren/"}
+                      aria-label="Instagram"
+                    >
+                      <motion.img
+                        loading="lazy"
+                        whileHover={{ scale: 1.2 }}
+                        className="socmed-icons"
+                        src={Ig}
+                        alt="Instagram logo"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={"https://www.facebook.com/johnmathew.loren/"}
+                      aria-label="Facebook"
+                    >
+                      <motion.img
+                        loading="lazy"
+                        whileHover={{ scale: 1.2 }}
+                        className="socmed-icons"
+                        src={Fb}
+                        alt="Facebook logo"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={"https://x.com/LorenJohnmathew"}
+                      aria-label="Twitter"
+                    >
+                      <motion.img
+                        loading="lazy"
+                        whileHover={{ scale: 1.2 }}
+                        className="socmed-icons"
+                        src={Twitter}
+                        alt="Twitter logo"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </figure>
+        </motion.aside>
+
         <motion.article
           className="mystory__article"
           initial={{ opacity: 0, y: 20 }}
@@ -62,83 +145,6 @@ const MyStory = () => {
             </section>
           </div>
         </motion.article>
-
-        <motion.aside
-          className="mystory__profile"
-          aria-label="About the founder"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <figure>
-            <motion.img
-              loading="lazy"
-              className="mystory__profile-image"
-              src={MyProfile}
-              alt="Portrait of Loren, founder of FoodieAI"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-            />
-            <figcaption className="mystory__name">
-              <h2>Hi! It's Loren</h2>
-              <p className="founder">(Founder)</p>
-            </figcaption>
-          </figure>
-
-          <nav aria-label="Social media links">
-            <ul className="mystory__socmedia-links">
-              <li>
-                <Link
-                  to={"https://www.instagram.com/johnmathewloren/"}
-                  aria-label="Instagram"
-                >
-                  <motion.img
-                    loading="lazy"
-                    whileHover={{ scale: 1.2 }}
-                    className="socmed-icons"
-                    src={Ig}
-                    alt="Instagram logo"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={"https://www.facebook.com/johnmathew.loren/"}
-                  aria-label="Facebook"
-                >
-                  <motion.img
-                    loading="lazy"
-                    whileHover={{ scale: 1.2 }}
-                    className="socmed-icons"
-                    src={Fb}
-                    alt="Facebook logo"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </Link>
-              </li>
-              <li>
-                <Link to={"https://x.com/LorenJohnmathew"} aria-label="Twitter">
-                  <motion.img
-                    loading="lazy"
-                    whileHover={{ scale: 1.2 }}
-                    className="socmed-icons"
-                    src={Twitter}
-                    alt="Twitter logo"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </motion.aside>
       </div>
     </div>
   );

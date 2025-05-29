@@ -27,7 +27,7 @@
 }
 
 .education__title-name {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 800;
 }
