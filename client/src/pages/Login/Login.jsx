@@ -20,10 +20,13 @@ const Login = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     fetchUser();
-
+  }, [])
+  
+  useEffect(() => {
     if (session) {
       navigate("/homepage");
     }
+    return null;
   }, [navigate, session]);
 
   return (
