@@ -25,9 +25,7 @@ const Navbar = () => {
   const [session, setSession] = useState(null);
 
   const fetchUser = async () => {
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
+    const {data: {session}} = await supabase.auth.getSession();
     if (session) {
       setLoggedInText("Log out");
       setSession(session);
