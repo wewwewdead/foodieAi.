@@ -15,7 +15,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Login from "./pages/Login/Login";
 import MyStory from "./pages/MyStory/MyStory";
-import ProtectedRoute from './ProtectedRoute';
+import ProtectedRoute from './ProtecteRoute';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,9 +27,9 @@ const router = createBrowserRouter(
 
       <Route element={<Layout />}>
         <Route path="/homepage" element={
-        <ProtectedRoute>
+        <ProtecteRoute>
           <HomePage/>
-        </ProtectedRoute>} />
+        </ProtecteRoute>} />
         <Route path="/about" element={<About />} />
         <Route path="/mystory" element={<MyStory />} />
         <Route path="/education" element={<Education />} />
