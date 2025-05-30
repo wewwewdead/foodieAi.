@@ -31,6 +31,7 @@ const Navbar = () => {
     if (session) {
       setLoggedInText("Log out");
       setSession(session);
+      console.log(session
     } else {
       setLoggedInText("Sign Up!");
     }
