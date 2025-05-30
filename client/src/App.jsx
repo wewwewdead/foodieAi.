@@ -27,9 +27,9 @@ const router = createBrowserRouter(
 
       <Route element={<Layout />}>
         <Route path="/homepage" element={
-        <ProtecteRoute>
+        <ProtectedRoute>
           <HomePage/>
-        </ProtecteRoute>} />
+        </ProtectedRoute>} />
         <Route path="/about" element={<About />} />
         <Route path="/mystory" element={<MyStory />} />
         <Route path="/education" element={<Education />} />
