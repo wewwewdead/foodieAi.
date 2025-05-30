@@ -59,7 +59,7 @@ const Navbar = () => {
     e.stopPropagation();
     await supabase.auth.signOut();
     setSession(null);
-    navigate("/login");
+    window.location.reload();
     setShowSidebar(false);
   };
 

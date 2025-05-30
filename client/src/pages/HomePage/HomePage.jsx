@@ -42,7 +42,7 @@ const HomePage = () => {
   const contentRef = useRef(null);
   const navigate = useNavigate();
 
-  const typingSpeed = 50; //miliseconds per character
+  const typingSpeed = 20; //miliseconds per character
 
   const fetchUser = async () => {
     const {

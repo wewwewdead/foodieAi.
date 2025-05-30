@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import supabase from './client/supabase';
+import { ClipLoader } from "react-spinners";
 
 const AuthContext = createContext(null);
 
@@ -55,7 +56,7 @@ export const AuthProvider = ({children}) =>{
 
     return(
         <AuthContext.Provider value={value}>
-        {!loading ? children : <div>Loading auth...</div>}
+        {!loading ? children : <div><ClipLoader loading={loading} size={20} color="rgb(184 202 56)"/></div>}
         </AuthContext.Provider>
     )
 }
