@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import "./about.css";
 
-// Shared animation variants (same as MyStory and Login)
-
 const About = () => {
   return (
     <div className="about">
@@ -19,14 +17,12 @@ const About = () => {
         </p>
       </motion.div>
 
-      {/* Main Content Section */}
       <motion.div
         className="about__content"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 110, damping: 12 }}
       >
-        {/* Card 1 */}
         <div className="card">
           <h2>How It Works</h2>
           <div>
@@ -41,7 +37,6 @@ const About = () => {
           <p className="output">&#10003; Get instant and structured results</p>
         </div>
 
-        {/* Card 2 */}
         <div className="card">
           <h2>Why I Built This</h2>
           <p className="text">
@@ -54,7 +49,6 @@ const About = () => {
           </p>
         </div>
 
-        {/* Card 3 */}
         <div className="card">
           <h2>
             How I Built <span>foodieAi.</span>

@@ -10,13 +10,7 @@ const MyStory = () => {
   return (
     <div className="mystory">
       <div className="mystory__container">
-        <motion.aside
-          className="mystory__profile"
-          aria-label="About the founder"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
+        <aside className="mystory__profile" aria-label="About the founder">
           <figure>
             <motion.img
               loading="lazy"
@@ -91,7 +85,7 @@ const MyStory = () => {
               </nav>
             </div>
           </figure>
-        </motion.aside>
+        </aside>
 
         <motion.article
           className="mystory__article"

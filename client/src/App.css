@@ -36,10 +36,6 @@ h3 {
   display: none;
 }
 
-.logo-container {
-  display: flex;
-}
-
 .analysis {
   display: flex;
   height: fit-content;
