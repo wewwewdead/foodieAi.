@@ -48,7 +48,7 @@ const HomePage = () => {
     const {
       data: { session },
     } = await supabase.auth.getSession();
-    // console.log(session)
+    console.log(session)
     setSession(session);
   };
 
