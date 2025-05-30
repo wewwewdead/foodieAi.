@@ -21,7 +21,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route element={<MinimalLayout />}>
-        <Route path="/" element={<Navigate to="/landingpage" replace />} />
+        <Route path="/" element={<Navigate to="/homepage" replace />} />
         <Route path="/landingpage" element={<LandingPage />} />
       </Route>
 
