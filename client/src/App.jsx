@@ -15,6 +15,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Login from "./pages/Login/Login";
 import MyStory from "./pages/MyStory/MyStory";
+import ProtectedRoute from './ProtectedRoute.jsx
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,7 +26,10 @@ const router = createBrowserRouter(
       </Route>
 
       <Route element={<Layout />}>
-        <Route path="/homepage" element={<HomePage />} />
+        <Route path="/homepage" element={
+        <ProtectedRoute>
+          <HomePage/>
+        </ProtectedRoute>} />
         <Route path="/about" element={<About />} />
         <Route path="/mystory" element={<MyStory />} />
         <Route path="/education" element={<Education />} />
