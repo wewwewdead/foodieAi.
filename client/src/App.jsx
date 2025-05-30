@@ -15,15 +15,17 @@ import HomePage from "./pages/HomePage/HomePage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Login from "./pages/Login/Login";
 import MyStory from "./pages/MyStory/MyStory";
-import ProtectedRoute from './ProtecteRoute';
+import {useAuth} from './AuthProvider';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route element={<MinimalLayout />}>
+{/*       <Route element={<MinimalLayout />}>
         <Route path="/" element={<Navigate to="/homepage" replace />} />
         <Route path="/landingpage" element={<LandingPage />} />
-      </Route>
+      </Route> */}
+
+      const {}
 
       <Route element={<Layout />}>
         <Route path="/homepage" element={<HomePage/>} />
