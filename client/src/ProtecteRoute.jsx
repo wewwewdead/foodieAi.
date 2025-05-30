@@ -15,5 +15,5 @@ export default function ProtectedRoute({ children }) {
 
   if (loading) return null;
 
-  return session ? children : <Navigate to="/landingpage" replace />;
+  return session ? children : <Navigate to="/login" replace />;
 }
