@@ -1,5 +1,5 @@
 import Modal from "react-modal";
-import "./SavedMealModal.css";
+import "./savedMealModal.css";
 
 /**
   A reusable modal component using `react-modal` to confirm that a food item was successfully saved to the daily tracker.
