@@ -8,7 +8,6 @@ import {
 import "./App.css";
 import DailyTracker from "./component/DailyTracker";
 import Layout from "./component/Layout";
-import MinimalLayout from "./component/MinimalLayout";
 import About from "./pages/About/About";
 import Education from "./pages/Education/Education";
 import HomePage from "./pages/HomePage/HomePage";
@@ -17,15 +16,21 @@ import Login from "./pages/Login/Login";
 import MyStory from "./pages/MyStory/MyStory";
 import {useAuth} from './AuthProvider';
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <>
-{/*       <Route element={<MinimalLayout />}>
-        <Route path="/" element={<Navigate to="/homepage" replace />} />
-        <Route path="/landingpage" element={<LandingPage />} />
-      </Route> */}
+function App() {
+  const {user, loading: authLoading} = useAuth();
 
-      const {}
+  if(authLoading){
+    return(
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', fontSize: '24px' }}>
+        Loading Application...
+      </div>
+    )
+  }
+  return(
+    <>
+      {user ? <NavbarLogin/> : <Navbar/>}
+    </>
+  )
 
       <Route element={<Layout />}>
         <Route path="/homepage" element={<HomePage/>} />
