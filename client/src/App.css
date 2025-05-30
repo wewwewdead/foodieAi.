@@ -155,12 +155,18 @@ h3 {
   gap: 4rem;
 }
 .save-bttn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(0, 97, 71);
   width: 100px;
   height: 40px;
   border-radius: 20px;
 }
 .cancel-bttn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(206, 65, 0);
   width: 100px;
   height: 40px;
@@ -192,21 +198,7 @@ h3 {
   justify-content: center;
   align-items: center;
 }
-.food-data-parent {
-  display: flex;
-  flex-direction: column;
-  width: 75%;
-  min-height: 300px;
-  height: fit-content;
-  gap: 1rem;
-  padding: 1rem 2rem;
-  border-radius: 15px;
-  background: linear-gradient(
-    to bottom left,
-    rgb(184 202 56),
-    rgb(226, 244, 93)
-  );
-}
+
 .food-data-container {
   display: flex;
   flex-direction: column;
@@ -258,17 +250,6 @@ h3 {
   align-items: flex-start;
   color: #ffffff;
   font-weight: 680;
-}
-.reminder {
-  background-color: #ff911cfd;
-  padding: 0.2rem;
-  border-radius: 10px;
-  display: flex;
-  position: absolute;
-  top: 4px;
-  left: 100px;
-  font-weight: 450;
-  font-size: 0.7rem;
 }
 .bubble-message {
   width: 50%;
@@ -333,10 +314,6 @@ h3 {
   }
   .date-today {
     width: 100%;
-  }
-  .reminder {
-    top: 10px;
-    font-size: 0.4rem;
   }
 }
 

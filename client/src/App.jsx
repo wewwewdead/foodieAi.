@@ -1,13 +1,6 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Navigate,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
+import { Routes, Route, Navigate } from 'react-router-dom';
 import "./App.css";
-import DailyTracker from "./component/DailyTracker";
-import Layout from "./component/Layout";
+import DailyTracker from "./pages/Dailytracker/DailyTracker";
 import About from "./pages/About/About";
 import Education from "./pages/Education/Education";
 import HomePage from "./pages/HomePage/HomePage";
@@ -15,6 +8,7 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import Login from "./pages/Login/Login";
 import MyStory from "./pages/MyStory/MyStory";
 import {useAuth} from './AuthProvider';
+import Navbar from "./component/NavBar/NavBar";
 
 function App() {
   const {user, loading: authLoading} = useAuth();
@@ -28,22 +22,19 @@ function App() {
   }
   return(
     <>
-      {user ? <NavbarLogin/> : <Navbar/>}
-    </>
-  )
+      {user ? <Navbar/> : <Navbar/>}
 
-      <Route element={<Layout />}>
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/landingpage" element={<LandingPage/>} />
         <Route path="/homepage" element={<HomePage/>} />
         <Route path="/about" element={<About />} />
         <Route path="/mystory" element={<MyStory />} />
         <Route path="/education" element={<Education />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dailytracker" element={<DailyTracker />} />
-      </Route>
+      </Routes>
     </>
-  )
-);
-
-export default function App() {
-  return <RouterProvider router={router} />;
+  ) 
 }
+export default App;

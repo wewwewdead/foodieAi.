@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
-import supabase from "../client/supabase";
-import { fetchFoodLogs } from "../services/api";
-import Footer from "./Footer";
-import Navbar from "./NavBar/NavBar";
+import supabase from "../../client/supabase";
+import { fetchFoodLogs } from "../../services/api";
+import Footer from "../../component/Footer";
+import Navbar from "../../component/NavBar/NavBar";
+import './dailytracker.css'
 
 const DailyTracker = () => {
   const [data, setData] = useState([]);

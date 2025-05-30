@@ -26,7 +26,6 @@ const Login = () => {
     if (session) {
       navigate("/homepage");
     }
-    return null;
   }, [navigate, session]);
 
   return (
