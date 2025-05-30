@@ -15,7 +15,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Login from "./pages/Login/Login";
 import MyStory from "./pages/MyStory/MyStory";
-import ProtectedRoute from './ProtectedRoute.jsx
+import ProtectedRoute from './ProtectedRoute';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
