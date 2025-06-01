@@ -54,6 +54,10 @@ const FoodUploadForm = ({
         )}
       </div>
 
+      {noFood && (
+        <h2 style={{ color: "rgb(255, 39, 39)" }}>No food detected!</h2>
+        )}
+
       {/* Show button only if image is uploaded */}
       {imagePreview && (
         <motion.button
@@ -73,10 +77,6 @@ const FoodUploadForm = ({
             ? "Analyze new food"
             : "Analyze"}
         </motion.button>
-      )}
-
-      {noFood && (
-        <h2 style={{ color: "rgb(255, 39, 39)" }}>No food detected!</h2>
       )}
     </motion.form>
   );
