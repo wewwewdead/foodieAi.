@@ -290,10 +290,10 @@ const HomePage = () => {
         />
 
         <div className="analysis">
-          <div className="loading-container">
+          {/* <div className="loading-container">
             {analyzing && <p>Analyzing...</p>}
             <ClipLoader loading={analyzing} size={20} color="rgb(184 202 56)" />
-          </div>
+          </div> */}
 
           {errorMessage ? (
             <h2 style={{ color: "rgb(255, 39, 39)" }}>{errorMessage}</h2>
