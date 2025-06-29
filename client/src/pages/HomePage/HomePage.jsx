@@ -160,10 +160,10 @@ const HomePage = () => {
 
       if (data.analysis.fallback) {
         setNoFood(data.analysis.fallback);
-        return console.log(data.analysis);
+        // return console.log(data.analysis);
       }
-      console.log(data.analysis);
-      console.log(data.coach);
+      // console.log(data.analysis);
+      // console.log(data.coach);
       setAnalysis(data.analysis);
       setFoodCoach(data.coach);
     } catch (error) {
