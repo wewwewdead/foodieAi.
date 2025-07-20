@@ -138,7 +138,7 @@ router.post("/analyze", upload, async (req, res) => {
 //here's my router for sending datat to the backend
 router.post('/save', async(req, res) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
     const {cal, sugar, carbs, userId, foodName} = req.body;
     
     if(!cal || !sugar || !carbs){

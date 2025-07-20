@@ -26,7 +26,7 @@ const DailyTracker = () => {
     }
     const userId = session.user.id;
     const response = await fetchFoodLogs(userId);
-    console.log(response);
+    // console.log(response);
     if (response.data) {
       setTotals(response.totals);
       setData(response.data);

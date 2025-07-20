@@ -21,7 +21,7 @@ export const uploadFood = async (postData) => {
   }
 };
 export const saveData = async(data) =>{
-  console.log(data);
+  // console.log(data);
 
   try {
     const response = await fetch(`${BASE_URL || 'http://localhost:3001'}/save`, {
