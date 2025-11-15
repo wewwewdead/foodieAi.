@@ -342,7 +342,7 @@ const HomePage = () => {
 
                   <div className="bubble-message">
                     <div className="message-container">
-                      <p>{analysis.coachPrompt}</p>
+                      <p>{analysis.coachAdvice}</p>
                     </div>
                     <small>{foodCoach} ~~</small>
                   </div>
